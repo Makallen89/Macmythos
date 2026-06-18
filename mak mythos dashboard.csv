@@ -1,0 +1,5 @@
+﻿File,Size,Contents
+**[mac-mythos-admin.zip](sandbox:///mnt/agents/output/mac-mythos-admin.zip)**,40 KB,**Complete Full-Stack Project** (Backend + Frontend + Deploy)
+**[mac-mythos-backend.zip](sandbox:///mnt/agents/output/mac-mythos-backend.zip)**,9 KB,Backend Only (FastAPI + PostgreSQL + Redis)
+**[mac-mythos-frontend.zip](sandbox:///mnt/agents/output/mac-mythos-frontend.zip)**,23.8 KB,Frontend Only (React + Vite + Tailwind)
+**[mac-mythos-deploy.zip](sandbox:///mnt/agents/output/mac-mythos-deploy.zip)**,3 KB,Deployment Configs Only
