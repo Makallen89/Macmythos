@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - macmythos
+
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - DATABASE_URL=postgresql://postgres:${DB_PASSWORD}@db:5432/macmythos
+      - REDIS_URL=redis://redis:6379/0
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_BUCKET_NAME=${AWS_BUCKET_NAME}
+      - AWS_REGION=${AWS_REGION}
+    depends_on:
+      - db
+      - redis
+    restart: unless-stopped
+    networks:
+      - macmythos
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=macmythos
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - macmythos
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    networks:
+      - macmythos
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "443:443"
+      - "80:80"
+    volumes:
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - frontend
+      - backend
+    restart: unless-stopped
+    networks:
+      - macmythos
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  macmythos:
+    driver: bridge
