@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Sitemap: https://subtle-bombolone-5e900d.netlify.app/sitemap.xml

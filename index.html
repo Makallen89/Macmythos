@@ -1,0 +1,2314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="Mac Mythos — India ka sabse affordable Multi-Agent AI Platform. Chat, code, create with specialist AI agents.">
+<meta name="keywords" content="AI chat India, Claude AI, AI agents, Hindi AI, affordable AI">
+<meta property="og:title" content="Mac Mythos — AI Agent Platform">
+<meta property="og:description" content="5 Specialist AI Agents. Starting ₹10. India ka apna AI.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://subtle-bombolone-5e900d.netlify.app">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#5b6fff">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mac Mythos">
+<link rel="manifest" href="/manifest.json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Mac Mythos",
+  "description": "5 Specialist AI Agents. India ka apna AI. Starting ₹10.",
+  "url": "https://subtle-bombolone-5e900d.netlify.app",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR",
+    "description": "5 free messages daily"
+  }
+}
+</script>
+<title>Mac Mythos — AI Agent Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   MAC MYTHOS — PRODUCTION CSS
+   ═══════════════════════════════════════════ */
+:root {
+  --void:#04050a; --deep:#0a0c18; --surface:#111428;
+  --panel:#161930; --panel2:#1a1e38; --rim:#1e2340; --rim2:#252a50;
+  --a:#5b6fff; --b:#a259ff; --c:#00e5c0; --d:#ff6b6b; --e:#ffd166;
+  --text:#e8eaf6; --text2:#b0b4d0; --muted:#6b7099;
+  --mono:'Space Mono',monospace; --sans:'Space Grotesk',sans-serif;
+  --sidebar-w:260px; --header-h:56px;
+  --r:10px; --r2:14px; --r3:18px;
+  --shadow:0 4px 24px rgba(0,0,0,.4);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{background:var(--void);color:var(--text);font-family:var(--sans);min-height:100vh;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+button{cursor:pointer;font-family:var(--sans);border:none;background:none;}
+input,textarea,select{font-family:var(--sans);outline:none;}
+img{max-width:100%;}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--rim2);border-radius:2px;}
+
+/* ═══ LAYOUT ═══════════════════════════════ */
+#app{display:flex;min-height:100vh;}
+
+/* ═══ SIDEBAR ══════════════════════════════ */
+#sidebar {
+  width:var(--sidebar-w);
+  background:var(--deep);
+  border-right:1px solid var(--rim);
+  display:flex;
+  flex-direction:column;
+  position:fixed;
+  left:0;top:0;bottom:0;
+  z-index:100;
+  transition:transform .3s ease;
+}
+#sidebar.hidden{transform:translateX(-100%);}
+
+.sidebar-logo {
+  padding:1.2rem 1.2rem .8rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--rim);
+  flex-shrink:0;
+}
+.logo-text {
+  font-family:var(--mono);
+  font-size:.95rem;
+  font-weight:700;
+  background:linear-gradient(135deg,var(--a),var(--c));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  letter-spacing:.05em;
+}
+.sidebar-close {
+  width:28px;height:28px;
+  border-radius:6px;
+  color:var(--muted);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;
+  transition:background .2s,color .2s;
+  display:none;
+}
+.sidebar-close:hover{background:var(--rim);color:var(--text);}
+
+.new-chat-btn {
+  margin:.8rem;
+  background:linear-gradient(135deg,var(--a),var(--b));
+  color:#fff;
+  border-radius:var(--r);
+  padding:.65rem 1rem;
+  font-size:.85rem;
+  font-weight:600;
+  display:flex;align-items:center;gap:.5rem;
+  transition:opacity .2s;
+  flex-shrink:0;
+}
+.new-chat-btn:hover{opacity:.85;}
+
+.sidebar-section {
+  padding:.5rem .8rem .2rem;
+  font-family:var(--mono);
+  font-size:.55rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.sidebar-btn {
+  display:flex;align-items:center;gap:.6rem;
+  padding:.55rem .9rem;
+  border-radius:var(--r);
+  margin:0 .4rem;
+  color:var(--text2);
+  font-size:.82rem;
+  transition:background .15s,color .15s;
+  cursor:pointer;
+  width:calc(100% - .8rem);
+}
+.sidebar-btn:hover{background:var(--rim);color:var(--text);}
+.sidebar-btn.active{background:rgba(91,111,255,.15);color:var(--a);border:1px solid rgba(91,111,255,.2);}
+.sidebar-btn .sb-icon{font-size:.9rem;width:18px;text-align:center;flex-shrink:0;}
+.sidebar-btn .sb-badge{margin-left:auto;font-family:var(--mono);font-size:.5rem;background:var(--a);color:#fff;padding:.1rem .4rem;border-radius:1rem;}
+
+.sidebar-sep{height:1px;background:var(--rim);margin:.4rem .8rem;}
+
+.chat-history {
+  flex:1;
+  overflow-y:auto;
+  padding:.3rem 0;
+}
+.history-item {
+  display:flex;align-items:center;gap:.5rem;
+  padding:.45rem .9rem;
+  margin:0 .4rem;
+  border-radius:var(--r);
+  cursor:pointer;
+  color:var(--text2);
+  font-size:.78rem;
+  transition:background .15s;
+  group:true;
+}
+.history-item:hover{background:var(--rim);}
+.history-item .hi-icon{font-size:.75rem;flex-shrink:0;color:var(--muted);}
+.history-item .hi-title{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.history-item .hi-del{display:none;color:var(--muted);font-size:.7rem;}
+.history-item:hover .hi-del{display:block;}
+.history-item .hi-del:hover{color:var(--d);}
+
+.sidebar-bottom {
+  border-top:1px solid var(--rim);
+  padding:.6rem;
+  flex-shrink:0;
+}
+.user-area {
+  display:flex;align-items:center;gap:.6rem;
+  padding:.55rem .6rem;
+  border-radius:var(--r);
+  cursor:pointer;
+  transition:background .15s;
+}
+.user-area:hover{background:var(--rim);}
+.user-avatar {
+  width:32px;height:32px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--a),var(--b));
+  display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;
+  flex-shrink:0;
+}
+.user-name{font-size:.82rem;font-weight:500;flex:1;}
+.user-plan{font-family:var(--mono);font-size:.55rem;color:var(--c);}
+
+/* ═══ MAIN AREA ════════════════════════════ */
+#main {
+  flex:1;
+  margin-left:var(--sidebar-w);
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  transition:margin-left .3s;
+}
+#main.full{margin-left:0;}
+
+/* ═══ TOP BAR ══════════════════════════════ */
+#topbar {
+  height:var(--header-h);
+  background:var(--deep);
+  border-bottom:1px solid var(--rim);
+  display:flex;
+  align-items:center;
+  padding:0 1.2rem;
+  gap:.8rem;
+  position:sticky;top:0;z-index:50;
+  flex-shrink:0;
+}
+.menu-toggle {
+  width:34px;height:34px;
+  border-radius:8px;
+  color:var(--muted);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;
+  transition:background .2s,color .2s;
+}
+.menu-toggle:hover{background:var(--rim);color:var(--text);}
+.topbar-title {
+  font-family:var(--mono);
+  font-size:.78rem;
+  color:var(--text2);
+  flex:1;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.topbar-actions{display:flex;gap:.4rem;align-items:center;}
+.tb-btn {
+  display:flex;align-items:center;gap:.35rem;
+  padding:.35rem .7rem;
+  border-radius:var(--r);
+  border:1px solid var(--rim);
+  color:var(--muted);
+  font-size:.72rem;
+  transition:all .2s;
+  white-space:nowrap;
+}
+.tb-btn:hover{border-color:var(--a);color:var(--a);background:rgba(91,111,255,.07);}
+
+/* ═══ CONTENT PAGES ════════════════════════ */
+.page{display:none;flex:1;overflow-y:auto;}
+.page.active{display:flex;flex-direction:column;}
+
+/* ─── HOME PAGE ─────────────────────────── */
+#page-home {
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:3rem 2rem;
+  position:relative;
+}
+#starfield{position:fixed;inset:0;z-index:0;pointer-events:none;}
+.home-inner{position:relative;z-index:1;max-width:700px;width:100%;}
+.hero-badge {
+  display:inline-block;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;
+  color:var(--c);border:1px solid rgba(0,229,192,.3);
+  padding:.35rem .9rem;border-radius:2rem;margin-bottom:1.8rem;text-transform:uppercase;
+}
+.hero-title {
+  font-size:clamp(3rem,10vw,7rem);
+  font-weight:700;line-height:.92;letter-spacing:-.03em;
+  background:linear-gradient(135deg,#fff 0%,var(--a) 40%,var(--b) 70%,var(--c) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:.6rem;
+}
+.hero-sub{font-family:var(--mono);font-size:clamp(.7rem,2vw,.95rem);color:var(--muted);letter-spacing:.06em;margin-bottom:2rem;}
+.agent-quick{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem;}
+.aq-btn {
+  display:flex;align-items:center;gap:.4rem;
+  padding:.5rem 1rem;
+  border-radius:2rem;
+  border:1px solid var(--rim);
+  background:var(--panel);
+  color:var(--text2);
+  font-size:.8rem;
+  transition:all .2s;
+}
+.aq-btn:hover{border-color:var(--a);color:var(--text);background:rgba(91,111,255,.08);}
+.home-input-wrap{
+  background:var(--panel);
+  border:1px solid var(--rim);
+  border-radius:var(--r2);
+  padding:.8rem 1rem;
+  display:flex;align-items:center;gap:.7rem;
+  transition:border-color .2s;
+  margin-bottom:1rem;
+}
+.home-input-wrap:focus-within{border-color:var(--a);}
+.home-input{
+  flex:1;background:transparent;border:none;
+  color:var(--text);font-size:.92rem;
+  padding:.2rem 0;
+}
+.home-input::placeholder{color:var(--muted);}
+.home-send{
+  background:linear-gradient(135deg,var(--a),var(--b));
+  color:#fff;border-radius:8px;
+  padding:.5rem 1rem;font-size:.8rem;font-weight:600;
+  transition:opacity .2s;white-space:nowrap;
+}
+.home-send:hover{opacity:.85;}
+.home-send:disabled{opacity:.4;}
+.home-suggestions{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;}
+.sug-btn{
+  padding:.35rem .8rem;
+  border-radius:2rem;
+  border:1px solid var(--rim);
+  background:transparent;
+  color:var(--muted);
+  font-size:.73rem;
+  transition:all .2s;
+}
+.sug-btn:hover{border-color:var(--c);color:var(--c);}
+
+/* ─── CHAT PAGE ─────────────────────────── */
+#page-chat{padding:0;}
+.chat-container{display:flex;flex-direction:column;height:calc(100vh - var(--header-h));}
+.chat-agent-bar{
+  background:var(--surface);
+  border-bottom:1px solid var(--rim);
+  padding:.6rem 1.2rem;
+  display:flex;align-items:center;gap:.5rem;
+  flex-wrap:wrap;
+  flex-shrink:0;
+}
+.agent-chip {
+  display:flex;align-items:center;gap:.35rem;
+  padding:.3rem .7rem;
+  border-radius:2rem;
+  border:1px solid var(--rim);
+  background:transparent;
+  color:var(--muted);
+  font-size:.72rem;
+  transition:all .2s;
+}
+.agent-chip.active{border-color:var(--a);color:var(--a);background:rgba(91,111,255,.1);}
+.agent-chip:hover{border-color:var(--a);color:var(--a);}
+.agent-bar-modes{margin-left:auto;display:flex;gap:.4rem;}
+.mode-chip{
+  padding:.28rem .65rem;
+  border-radius:2rem;
+  border:1px solid var(--rim);
+  background:transparent;
+  color:var(--muted);
+  font-size:.68rem;
+  font-family:var(--mono);
+  transition:all .2s;
+}
+.mode-chip.on{border-color:var(--e);color:var(--e);background:rgba(255,209,102,.07);}
+
+.messages-area{
+  flex:1;
+  overflow-y:auto;
+  padding:1.2rem;
+  display:flex;flex-direction:column;gap:.9rem;
+}
+.msg{display:flex;gap:.6rem;align-items:flex-start;animation:fadeIn .3s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+.msg.user{flex-direction:row-reverse;}
+.msg-avatar{
+  width:30px;height:30px;border-radius:50%;
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;
+}
+.msg-body{display:flex;flex-direction:column;max-width:min(78%,520px);}
+.msg.user .msg-body{align-items:flex-end;}
+.msg-name{font-family:var(--mono);font-size:.52rem;color:var(--c);margin-bottom:.22rem;letter-spacing:.05em;}
+.msg-bubble{
+  padding:.65rem .95rem;
+  border-radius:14px;
+  font-size:.87rem;
+  line-height:1.65;
+  word-break:break-word;
+}
+.msg.agent .msg-bubble{background:var(--surface);border:1px solid var(--rim);color:var(--text);}
+.msg.user .msg-bubble{background:linear-gradient(135deg,var(--a),var(--b));color:#fff;}
+.msg-actions{
+  display:flex;gap:.3rem;margin-top:.3rem;flex-wrap:wrap;
+  opacity:0;transition:opacity .2s;
+}
+.msg:hover .msg-actions{opacity:1;}
+.mact{
+  padding:.18rem .45rem;
+  border-radius:1rem;
+  border:1px solid var(--rim);
+  background:var(--panel);
+  color:var(--muted);
+  font-size:.55rem;
+  font-family:var(--mono);
+  transition:all .2s;
+}
+.mact:hover{border-color:var(--c);color:var(--c);}
+
+.typing-indicator{display:flex;gap:4px;padding:.4rem 0;}
+.typing-indicator span{
+  width:7px;height:7px;background:var(--a);border-radius:50%;
+  animation:td 1.2s infinite;
+}
+.typing-indicator span:nth-child(2){animation-delay:.2s;}
+.typing-indicator span:nth-child(3){animation-delay:.4s;}
+@keyframes td{0%,80%,100%{opacity:.3;transform:scale(.8);}40%{opacity:1;transform:scale(1.1);}}
+
+/* Chat input */
+.chat-input-area{
+  border-top:1px solid var(--rim);
+  background:var(--deep);
+  padding:.8rem 1.2rem;
+  flex-shrink:0;
+}
+.emoji-strip{
+  display:none;
+  gap:.25rem;flex-wrap:wrap;
+  margin-bottom:.6rem;
+  background:var(--surface);
+  border:1px solid var(--rim);
+  border-radius:var(--r);
+  padding:.5rem .7rem;
+}
+.emoji-strip.show{display:flex;}
+.es-btn{
+  background:transparent;border:none;
+  font-size:1.2rem;border-radius:6px;
+  padding:.18rem;transition:transform .1s;
+}
+.es-btn:hover{transform:scale(1.3);}
+.input-row{
+  display:flex;align-items:flex-end;gap:.5rem;
+  background:var(--surface);
+  border:1px solid var(--rim);
+  border-radius:var(--r2);
+  padding:.6rem .8rem;
+  transition:border-color .2s;
+}
+.input-row:focus-within{border-color:var(--a);}
+.chat-textarea{
+  flex:1;background:transparent;border:none;
+  color:var(--text);font-size:.88rem;
+  resize:none;max-height:120px;min-height:22px;
+  line-height:1.5;padding:.1rem 0;
+}
+.chat-textarea::placeholder{color:var(--muted);}
+.input-actions{display:flex;align-items:center;gap:.4rem;flex-shrink:0;}
+.ia-btn{
+  width:32px;height:32px;
+  border-radius:8px;
+  color:var(--muted);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.95rem;
+  transition:background .2s,color .2s;
+}
+.ia-btn:hover{background:var(--rim);color:var(--text);}
+.ia-btn.listening{background:rgba(255,107,107,.15);color:var(--d);}
+.send-btn{
+  width:34px;height:34px;
+  background:linear-gradient(135deg,var(--a),var(--b));
+  color:#fff;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;
+  transition:opacity .2s;
+  flex-shrink:0;
+}
+.send-btn:hover{opacity:.85;}
+.send-btn:disabled{opacity:.35;}
+.input-footer{
+  display:flex;align-items:center;gap:.6rem;
+  margin-top:.5rem;flex-wrap:wrap;
+}
+.if-btn{
+  padding:.22rem .55rem;
+  border-radius:1rem;
+  border:1px solid var(--rim);
+  background:transparent;
+  color:var(--muted);
+  font-size:.6rem;
+  font-family:var(--mono);
+  transition:all .2s;
+}
+.if-btn:hover{border-color:var(--c);color:var(--c);}
+.voice-ind{
+  display:none;align-items:center;gap:.3rem;
+  font-family:var(--mono);font-size:.6rem;color:var(--d);
+}
+.vdot{width:6px;height:6px;border-radius:50%;background:var(--d);animation:vp 1s infinite;}
+@keyframes vp{0%,100%{opacity:1;}50%{opacity:.3;}}
+.counter-pill{
+  margin-left:auto;
+  font-family:var(--mono);font-size:.58rem;color:var(--muted);
+  display:flex;align-items:center;gap:.5rem;
+}
+.cpill-bar{width:60px;height:3px;background:var(--rim);border-radius:2px;}
+.cpill-fill{height:100%;background:linear-gradient(90deg,var(--a),var(--c));border-radius:2px;transition:width .5s;}
+
+/* ─── SETTINGS PAGE ─────────────────────── */
+#page-settings{padding:0;}
+.settings-layout{display:flex;height:calc(100vh - var(--header-h));}
+.settings-nav{
+  width:200px;
+  border-right:1px solid var(--rim);
+  background:var(--deep);
+  overflow-y:auto;
+  flex-shrink:0;
+}
+.settings-nav-item{
+  display:flex;align-items:center;gap:.6rem;
+  padding:.6rem 1rem;
+  color:var(--text2);
+  font-size:.82rem;
+  cursor:pointer;
+  transition:background .15s,color .15s;
+}
+.settings-nav-item:hover{background:var(--rim);color:var(--text);}
+.settings-nav-item.active{background:rgba(91,111,255,.12);color:var(--a);}
+.settings-nav-item .sni-icon{font-size:.9rem;width:18px;text-align:center;}
+.settings-content{
+  flex:1;
+  overflow-y:auto;
+  padding:2rem;
+}
+.settings-panel{display:none;}
+.settings-panel.active{display:block;}
+.settings-title{font-size:1.3rem;font-weight:700;margin-bottom:.3rem;}
+.settings-desc{font-size:.83rem;color:var(--muted);margin-bottom:1.8rem;}
+.s-section{margin-bottom:2rem;}
+.s-section-title{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:1px solid var(--rim);}
+.s-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.7rem 0;
+  border-bottom:1px solid var(--rim);
+  gap:1rem;
+}
+.s-row:last-child{border-bottom:none;}
+.s-label{font-size:.85rem;font-weight:500;}
+.s-hint{font-size:.73rem;color:var(--muted);margin-top:.15rem;}
+.s-toggle{
+  width:40px;height:22px;
+  background:var(--rim2);
+  border-radius:11px;
+  position:relative;
+  cursor:pointer;
+  transition:background .2s;
+  flex-shrink:0;
+}
+.s-toggle.on{background:var(--a);}
+.s-toggle::after{
+  content:'';
+  position:absolute;
+  width:16px;height:16px;
+  background:#fff;border-radius:50%;
+  top:3px;left:3px;
+  transition:left .2s;
+}
+.s-toggle.on::after{left:21px;}
+.s-select{
+  background:var(--surface);border:1px solid var(--rim);
+  border-radius:8px;padding:.45rem .7rem;
+  color:var(--text);font-size:.82rem;
+  cursor:pointer;transition:border-color .2s;
+}
+.s-select:focus{border-color:var(--a);}
+.s-input{
+  background:var(--surface);border:1px solid var(--rim);
+  border-radius:8px;padding:.45rem .7rem;
+  color:var(--text);font-size:.82rem;
+  width:200px;transition:border-color .2s;
+}
+.s-input:focus{border-color:var(--a);}
+.s-btn{
+  padding:.45rem .9rem;
+  border-radius:8px;
+  border:1px solid var(--rim);
+  background:transparent;
+  color:var(--muted);
+  font-size:.78rem;
+  transition:all .2s;
+}
+.s-btn:hover{border-color:var(--a);color:var(--a);}
+.s-btn.danger{border-color:rgba(255,107,107,.3);color:var(--d);}
+.s-btn.danger:hover{background:rgba(255,107,107,.1);}
+.s-btn.primary{background:linear-gradient(135deg,var(--a),var(--b));border:none;color:#fff;}
+.accent-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem;}
+.accent-dot{
+  width:28px;height:28px;border-radius:50%;
+  cursor:pointer;border:2px solid transparent;
+  transition:border-color .2s,transform .2s;
+}
+.accent-dot:hover,.accent-dot.sel{border-color:#fff;transform:scale(1.1);}
+.memory-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.8rem;}
+.memory-item{
+  display:flex;align-items:center;gap:.7rem;
+  background:var(--surface);border:1px solid var(--rim);
+  border-radius:var(--r);padding:.7rem 1rem;
+  font-size:.82rem;
+}
+.memory-item .mi-text{flex:1;color:var(--text2);}
+.memory-item .mi-del{color:var(--muted);font-size:.8rem;}
+.memory-item .mi-del:hover{color:var(--d);}
+.plan-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem;margin-top:.8rem;}
+.plan-card{
+  background:var(--surface);border:1px solid var(--rim);
+  border-radius:var(--r2);padding:1.2rem;text-align:center;
+  transition:border-color .2s;
+}
+.plan-card.current{border-color:var(--c);}
+.plan-price{font-size:1.8rem;font-weight:700;color:#fff;}
+.plan-price span{font-size:.85rem;color:var(--muted);}
+.plan-name{font-size:.75rem;color:var(--muted);margin-bottom:.8rem;}
+.plan-btn{
+  width:100%;padding:.4rem;border-radius:8px;
+  background:linear-gradient(135deg,var(--a),var(--b));
+  color:#fff;border:none;font-size:.78rem;font-weight:600;
+}
+.plan-btn.current-btn{background:var(--rim2);color:var(--muted);}
+.usage-stat{
+  background:var(--surface);border:1px solid var(--rim);
+  border-radius:var(--r);padding:1rem;
+  margin-bottom:.7rem;
+}
+.usage-label{font-size:.75rem;color:var(--muted);margin-bottom:.3rem;}
+.usage-val{font-size:1.5rem;font-weight:700;color:var(--text);}
+.usage-bar{width:100%;height:4px;background:var(--rim);border-radius:2px;margin-top:.5rem;}
+.usage-fill{height:100%;background:linear-gradient(90deg,var(--a),var(--c));border-radius:2px;}
+.about-logo{font-family:var(--mono);font-size:2rem;font-weight:700;background:linear-gradient(135deg,var(--a),var(--c));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem;}
+
+/* ─── OTHER PAGES ───────────────────────── */
+.page-inner{padding:2rem;max-width:900px;}
+.page-title{font-size:1.6rem;font-weight:700;margin-bottom:.5rem;}
+.page-subtitle{color:var(--muted);font-size:.9rem;margin-bottom:2rem;}
+.card{background:var(--panel);border:1px solid var(--rim);border-radius:var(--r2);padding:1.3rem;margin-bottom:1rem;}
+.card-title{font-weight:600;margin-bottom:.4rem;}
+.card-desc{font-size:.82rem;color:var(--muted);line-height:1.6;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.pill{
+  display:inline-flex;align-items:center;gap:.3rem;
+  padding:.2rem .6rem;border-radius:1rem;
+  font-family:var(--mono);font-size:.58rem;
+  background:rgba(91,111,255,.1);border:1px solid rgba(91,111,255,.2);color:var(--a);
+}
+.pill.green{background:rgba(0,229,192,.08);border-color:rgba(0,229,192,.2);color:var(--c);}
+.pill.yellow{background:rgba(255,209,102,.08);border-color:rgba(255,209,102,.2);color:var(--e);}
+
+/* ═══ MODALS ═══════════════════════════════ */
+.overlay{
+  position:fixed;inset:0;z-index:500;
+  background:rgba(4,5,10,.92);
+  display:none;align-items:center;justify-content:center;
+  padding:1.2rem;backdrop-filter:blur(8px);
+}
+.overlay.show{display:flex;}
+.modal{
+  background:var(--panel);
+  border:1px solid var(--a);
+  border-radius:var(--r3);
+  padding:2rem 1.8rem;
+  max-width:420px;width:100%;
+  text-align:center;
+  box-shadow:0 0 60px rgba(91,111,255,.2);
+  max-height:90vh;overflow-y:auto;
+}
+.modal.wide{max-width:520px;}
+.modal-icon{font-size:2.2rem;margin-bottom:.7rem;}
+.modal-title{font-size:1.2rem;font-weight:700;margin-bottom:.35rem;}
+.modal-desc{font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:1.3rem;}
+.modal-desc a{color:var(--c);}
+.field{
+  width:100%;background:var(--surface);
+  border:1px solid var(--rim);border-radius:9px;
+  padding:.7rem .9rem;color:var(--text);
+  font-family:var(--mono);font-size:.78rem;
+  margin-bottom:.65rem;transition:border-color .2s;
+}
+.field:focus{border-color:var(--a);}
+.field.err{border-color:var(--d);}
+.field::placeholder{color:var(--muted);}
+.primary-btn{
+  width:100%;background:linear-gradient(135deg,var(--a),var(--b));
+  color:#fff;border:none;border-radius:9px;
+  padding:.78rem;font-size:.88rem;font-weight:600;
+  transition:opacity .2s;margin-bottom:.6rem;
+}
+.primary-btn:hover{opacity:.85;}
+.ghost-btn{
+  width:100%;background:transparent;
+  border:1px solid var(--rim);color:var(--muted);
+  border-radius:9px;padding:.6rem;
+  font-size:.78rem;transition:all .2s;
+}
+.ghost-btn:hover{border-color:var(--rim2);color:var(--text);}
+.note{font-family:var(--mono);font-size:.56rem;color:var(--muted);line-height:1.6;margin-top:.5rem;}
+.recharge-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:.8rem;}
+.rplan{
+  background:var(--surface);border:1px solid var(--rim);
+  border-radius:var(--r);padding:1rem .7rem;text-align:center;
+  transition:border-color .2s,transform .2s;display:block;color:var(--text);
+}
+.rplan:hover{border-color:var(--a);transform:translateY(-2px);}
+.rplan.hot{border-color:var(--c);}
+.rplan-amt{font-size:1.3rem;font-weight:700;color:#fff;}
+.rplan-desc{font-size:.62rem;color:var(--muted);margin-top:.2rem;}
+.rplan-btn{
+  margin-top:.55rem;
+  background:linear-gradient(135deg,var(--a),var(--b));
+  color:#fff;border:none;border-radius:6px;
+  padding:.32rem .6rem;font-size:.62rem;font-weight:600;width:100%;
+}
+
+/* ═══ TOAST ════════════════════════════════ */
+.toast{
+  position:fixed;bottom:1.5rem;left:50%;
+  transform:translateX(-50%) translateY(20px);
+  background:var(--panel);border:1px solid var(--rim);
+  border-radius:2rem;padding:.45rem 1.1rem;
+  font-family:var(--mono);font-size:.68rem;color:var(--text);
+  z-index:900;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;
+  box-shadow:var(--shadow);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* ═══ OVERLAID SIDEBAR BACKDROP ════════════ */
+#sb-backdrop{
+  position:fixed;inset:0;z-index:99;
+  background:rgba(4,5,10,.6);
+  display:none;backdrop-filter:blur(2px);
+}
+#sb-backdrop.show{display:block;}
+
+/* ═══ RESPONSIVE ═══════════════════════════ */
+@media(max-width:768px){
+  :root{--sidebar-w:260px;}
+  #sidebar{transform:translateX(-100%);}
+  #sidebar.open{transform:translateX(0);}
+  #main{margin-left:0!important;}
+  .sidebar-close{display:flex;}
+  .settings-layout{flex-direction:column;}
+  .settings-nav{width:100%;height:auto;border-right:none;border-bottom:1px solid var(--rim);display:flex;overflow-x:auto;flex-direction:row;}
+  .settings-nav-item{flex-shrink:0;flex-direction:column;gap:.2rem;font-size:.68rem;padding:.5rem .7rem;}
+  .settings-nav-item .sni-icon{width:auto;}
+  .grid-2,.grid-3{grid-template-columns:1fr;}
+  .recharge-plans{grid-template-columns:1fr 1fr;}
+  .topbar-actions .tb-btn span{display:none;}
+}
+@media(max-width:480px){
+  .agent-quick{gap:.4rem;}
+  .aq-btn{font-size:.72rem;padding:.4rem .75rem;}
+  .recharge-plans{grid-template-columns:1fr;}
+  .plan-cards{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- SIDEBAR BACKDROP -->
+<div id="sb-backdrop" onclick="closeSidebar()"></div>
+
+<!-- API KEY MODAL -->
+<div class="overlay" id="apiModal">
+  <div class="modal">
+    <div class="modal-icon">🔑</div>
+    <div class="modal-title">API Key Connect Karo</div>
+    <div class="modal-desc">
+      Mac Mythos agents ko activate karne ke liye Anthropic API key chahiye.<br><br>
+      Key nahi hai? <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> pe free account banao.
+    </div>
+    <input class="field" id="apiKeyInput" type="password" placeholder="sk-ant-api03-..." autocomplete="off" spellcheck="false"/>
+    <button class="primary-btn" id="apiSaveBtn" onclick="saveApiKey()">✓ Activate Agents</button>
+    <div class="note">🔒 Key sirf is session mein rehti hai. Browser band karne par hat jaati hai. Kabhi kisi ke saath share mat karo.</div>
+  </div>
+</div>
+
+<!-- RECHARGE MODAL -->
+<div class="overlay" id="rechargeModal">
+  <div class="modal wide">
+    <div class="modal-icon">💳</div>
+    <div class="modal-title">Free Messages Khatam!</div>
+    <div class="modal-desc">Aaj ke 5 free messages use ho gaye. Ek plan choose karo aur baatein jaari rakho!</div>
+    <div class="recharge-plans">
+      <a class="rplan" href="https://rzp.io/rzp/zMbyn2Y" target="_blank">
+        <div class="rplan-amt">₹10</div>
+        <div class="rplan-desc">50 Messages</div>
+        <button class="rplan-btn">Buy →</button>
+      </a>
+      <a class="rplan hot" href="https://rzp.io/rzp/TCqijQLD" target="_blank">
+        <div class="rplan-amt">₹50</div>
+        <div class="rplan-desc">300 Messages</div>
+        <button class="rplan-btn">Buy →</button>
+      </a>
+      <a class="rplan" href="https://rzp.io/rzp/xjupt9ZI" target="_blank">
+        <div class="rplan-amt">₹49</div>
+        <div class="rplan-desc">Unlimited/mo</div>
+        <button class="rplan-btn">Subscribe →</button>
+      </a>
+    </div>
+    <button class="ghost-btn" onclick="closeModal('rechargeModal')">🌙 Kal wapas aao — 5 free milenge</button>
+  </div>
+</div>
+
+<!-- EXPORT MODAL -->
+<div class="overlay" id="exportModal">
+  <div class="modal">
+    <div class="modal-icon">📥</div>
+    <div class="modal-title">Chat Export Karo</div>
+    <div class="modal-desc">Format choose karo</div>
+    <button class="primary-btn" onclick="exportChat('txt')">📄 Text (.txt)</button>
+    <button class="primary-btn" style="background:linear-gradient(135deg,var(--c),var(--a))" onclick="exportChat('md')">📝 Markdown (.md)</button>
+    <button class="ghost-btn" onclick="closeModal('exportModal')">Cancel</button>
+  </div>
+</div>
+
+<!-- SHARE MODAL -->
+<div class="overlay" id="shareModal">
+  <div class="modal">
+    <div class="modal-icon">🔗</div>
+    <div class="modal-title">Chat Share Karo</div>
+    <div class="modal-desc">Link copy karo aur share karo</div>
+    <input class="field" id="shareUrl" readonly onclick="this.select()"/>
+    <button class="primary-btn" onclick="copyShareLink()">📋 Link Copy Karo</button>
+    <button class="ghost-btn" onclick="closeModal('shareModal')">Close</button>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app">
+
+  <!-- SIDEBAR -->
+  <nav id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-text">MAC MYTHOS</div>
+      <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+    </div>
+
+    <button class="new-chat-btn" onclick="newChat()">
+      <span>✦</span> New Chat
+    </button>
+
+    <div class="sidebar-section">Navigation</div>
+    <button class="sidebar-btn active" id="nav-home" onclick="showPage('home')">
+      <span class="sb-icon">🏠</span> Home
+    </button>
+    <button class="sidebar-btn" id="nav-chat" onclick="showPage('chat')">
+      <span class="sb-icon">💬</span> Chat
+    </button>
+    <button class="sidebar-btn" id="nav-agents" onclick="showPage('agents')">
+      <span class="sb-icon">🤖</span> Agents
+    </button>
+    <button class="sidebar-btn" id="nav-pricing" onclick="showPage('pricing')">
+      <span class="sb-icon">💰</span> Plans & Pricing
+    </button>
+
+    <div class="sidebar-sep"></div>
+    <div class="sidebar-section">Tools</div>
+    <button class="sidebar-btn" onclick="openFileUpload()">
+      <span class="sb-icon">📁</span> Upload File
+    </button>
+    <button class="sidebar-btn" onclick="openImageUpload()">
+      <span class="sb-icon">🖼️</span> Images
+    </button>
+    <button class="sidebar-btn" onclick="openExport()">
+      <span class="sb-icon">📥</span> Export Chat
+    </button>
+    <button class="sidebar-btn" onclick="openShare()">
+      <span class="sb-icon">🔗</span> Share Chat
+    </button>
+    <button class="sidebar-btn" onclick="openSearch()">
+      <span class="sb-icon">🔍</span> Search Chats
+    </button>
+    <button class="sidebar-btn" onclick="installPWA()">
+      <span class="sb-icon">📲</span> Install App
+    </button>
+
+    <div class="sidebar-sep"></div>
+    <div class="sidebar-section">Recent Chats</div>
+    <div class="chat-history" id="chatHistory"></div>
+
+    <div class="sidebar-bottom">
+      <button class="sidebar-btn" id="nav-settings" onclick="showPage('settings')" style="margin-bottom:.3rem">
+        <span class="sb-icon">⚙️</span> Settings
+      </button>
+      <div class="user-area" onclick="showPage('settings');showSettingsPanel('account')">
+        <div class="user-avatar">👤</div>
+        <div>
+          <div class="user-name" id="displayName">User</div>
+          <div class="user-plan">Free Plan</div>
+        </div>
+        <span style="color:var(--muted);font-size:.8rem">›</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main id="main">
+
+    <!-- TOP BAR -->
+    <div id="topbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+      <div class="topbar-title" id="topbarTitle">Mac Mythos — AI Agent Platform</div>
+      <div class="topbar-actions">
+        <button class="tb-btn" onclick="newChat()"><span>✦</span> <span>New Chat</span></button>
+        <button class="tb-btn" onclick="openShare()">🔗 <span>Share</span></button>
+        <button class="tb-btn" onclick="changeKey()">🔑 <span>Key</span></button>
+      </div>
+    </div>
+
+    <!-- ── HOME PAGE ── -->
+    <div class="page active" id="page-home">
+      <canvas id="starfield" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
+      <div id="page-home-inner" style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100vh - 56px);padding:2.5rem 1.5rem;text-align:center;">
+        <div class="hero-badge">✦ Multi-Agent Intelligence Platform</div>
+        <h1 class="hero-title">Mac<br>Mythos</h1>
+        <div class="hero-sub">5 SPECIALIST AI AGENTS · ALWAYS READY · INDIA'S OWN</div>
+
+        <div class="agent-quick" style="margin-bottom:2rem">
+          <button class="aq-btn" onclick="startChatWith('creator')">🎨 Creator</button>
+          <button class="aq-btn" onclick="startChatWith('thinker')">🧠 Thinker</button>
+          <button class="aq-btn" onclick="startChatWith('coder')">💻 Coder</button>
+          <button class="aq-btn" onclick="startChatWith('healer')">🏥 Healer</button>
+          <button class="aq-btn" onclick="startChatWith('scholar')">📚 Scholar</button>
+        </div>
+
+        <div class="home-input-wrap" style="width:100%;max-width:580px">
+          <input class="home-input" id="homeInput" placeholder="Kuch bhi poochho — koi bhi agent se..." onkeydown="if(event.key==='Enter')homeAsk()"/>
+          <button class="home-send" id="homeSend" onclick="homeAsk()">Poochho →</button>
+        </div>
+
+        <div class="home-suggestions">
+          <button class="sug-btn" onclick="setSug('Ek creative story sunao')">✍️ Story sunao</button>
+          <button class="sug-btn" onclick="setSug('Python mein hello world kaise likhein?')">💻 Python code</button>
+          <button class="sug-btn" onclick="setSug('Stress kam karne ke tips batao')">🏥 Stress tips</button>
+          <button class="sug-btn" onclick="setSug('India ka itihas batao')">📚 India history</button>
+          <button class="sug-btn" onclick="setSug('Business idea do')">🧠 Business idea</button>
+        </div>
+
+        <div style="margin-top:2.5rem;font-family:var(--mono);font-size:.6rem;color:var(--muted)">
+          ⚕️ Health/Legal info educational only — professional advice nahi hai &nbsp;·&nbsp;
+          <a href="/terms.html" style="color:var(--c)">Terms</a> &nbsp;·&nbsp;
+          <a href="/privacy.html" style="color:var(--c)">Privacy</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CHAT PAGE ── -->
+    <div class="page" id="page-chat">
+      <div class="chat-container">
+        <!-- Agent Bar -->
+        <div class="chat-agent-bar">
+          <div id="agentChips"></div>
+          <div class="agent-bar-modes">
+            <button class="mode-chip" id="funnyChip" onclick="toggleFunny()">😄 Funny</button>
+            <button class="mode-chip" id="speakChip" onclick="toggleSpeak()">🔊 Speak</button>
+          </div>
+        </div>
+
+        <!-- Messages -->
+        <div class="messages-area" id="messagesArea">
+          <div class="msg agent" id="welcome-msg">
+            <div class="msg-avatar" style="background:linear-gradient(135deg,var(--a),var(--b))">🤖</div>
+            <div class="msg-body">
+              <div class="msg-name">MAC MYTHOS</div>
+              <div class="msg-bubble">Namaste! 🙏 Koi bhi agent choose karo aur kuch bhi poochho. Main ready hoon!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input -->
+        <div class="chat-input-area">
+          <div class="emoji-strip" id="emojiStrip"></div>
+          <div class="input-row">
+            <textarea class="chat-textarea" id="chatTextarea" placeholder="Message likhो..." rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+            <div class="input-actions">
+              <button class="ia-btn" onclick="toggleEmoji()" title="Emoji">😊</button>
+              <button class="ia-btn" id="micBtn" onclick="toggleVoice()" title="Voice Input">🎤</button>
+              <button class="send-btn" id="sendBtn" onclick="sendMessage()" title="Send">➤</button>
+            </div>
+          </div>
+          <div class="input-footer">
+            <button class="if-btn" onclick="clearChat()">🗑️ Clear</button>
+            <button class="if-btn" onclick="openExport()">📥 Export</button>
+            <button class="if-btn" onclick="openShare()">🔗 Share</button>
+            <button class="if-btn" onclick="regenerateLast()">🔄 Regenerate</button>
+            <button class="if-btn" onclick="openFileUpload()">📁 File</button>
+            <button class="if-btn" onclick="stopSpeaking()">⏹️ Stop</button>
+            <div class="voice-ind" id="voiceInd"><div class="vdot"></div> Sun raha hoon...</div>
+            <div class="counter-pill">
+              <span id="counterText">5 free</span>
+              <div class="cpill-bar"><div class="cpill-fill" id="cpillFill"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── AGENTS PAGE ── -->
+    <div class="page" id="page-agents">
+      <div class="page-inner">
+        <div class="page-title">AI Agents</div>
+        <div class="page-subtitle">Har specialist apne domain mein expert hai</div>
+        <div id="agentsGrid"></div>
+      </div>
+    </div>
+
+    <!-- ── PRICING PAGE ── -->
+    <div class="page" id="page-pricing">
+      <div class="page-inner">
+        <div class="page-title">Plans & Pricing</div>
+        <div class="page-subtitle">Affordable AI for everyone in India</div>
+        <div style="background:rgba(0,229,192,.07);border:1px solid rgba(0,229,192,.2);border-radius:var(--r);padding:.8rem 1rem;font-size:.78rem;color:var(--c);margin-bottom:1.5rem;font-family:var(--mono)">
+          ✓ Har roz 5 FREE messages milte hain — koi signup nahi chahiye
+        </div>
+        <div class="grid-3" id="pricingGrid"></div>
+        <div style="margin-top:2rem;font-size:.78rem;color:var(--muted);line-height:1.7">
+          <strong style="color:var(--text)">Payment ke baad:</strong> Razorpay se payment complete karo → apna Transaction ID <a href="mailto:Mahesh135757@gmail.com" style="color:var(--c)">Mahesh135757@gmail.com</a> pe bhejo → 1 ghante mein credits activate ho jayenge.<br>
+          <span style="margin-top:.4rem;display:block">UPI / Cards / NetBanking sab accept hai.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SETTINGS PAGE ── -->
+    <div class="page" id="page-settings">
+      <div class="settings-layout">
+        <!-- Settings Nav -->
+        <div class="settings-nav" id="settingsNav">
+          <div class="settings-nav-item active" onclick="showSettingsPanel('personalization')"><span class="sni-icon">🎨</span> Personalization</div>
+          <div class="settings-nav-item" onclick="showSettingsPanel('memory')"><span class="sni-icon">🧠</span> Memory</div>
+          <div class="settings-nav-item" onclick="showSettingsPanel('voice')"><span class="sni-icon">🔊</span> Voice</div>
+          <div class="settings-nav-item" onclick="showSettingsPanel('general')"><span class="sni-icon">⚙️</span> General</div>
+          <div class="settings-nav-item" onclick="showSettingsPanel('security')"><span class="sni-icon">🔒</span> Security</div>
+          <div class="settings-nav-item" onclick="showSettingsPanel('data')"><span class="sni-icon">📊</span> Data Controls</div>
+          <div class="settings-nav-item" onclick="showSettingsPanel('upgrade')"><span class="sni-icon">⭐</span> Upgrade</div>
+          <div class="settings-nav-item" onclick="showSettingsPanel('support')"><span class="sni-icon">🆘</span> Support</div>
+          <div class="settings-nav-item" onclick="showSettingsPanel('about')"><span class="sni-icon">ℹ️</span> About</div>
+          <div class="settings-nav-item" onclick="showSettingsPanel('account')"><span class="sni-icon">👤</span> Account</div>
+        </div>
+
+        <!-- Settings Content -->
+        <div class="settings-content">
+
+          <!-- Personalization -->
+          <div class="settings-panel active" id="sp-personalization">
+            <div class="settings-title">Personalization</div>
+            <div class="settings-desc">App ka look aur feel customize karo</div>
+            <div class="s-section">
+              <div class="s-section-title">Accent Color</div>
+              <div class="accent-row">
+                <div class="accent-dot sel" style="background:#5b6fff" onclick="setAccent('#5b6fff',this)" title="Blue"></div>
+                <div class="accent-dot" style="background:#a259ff" onclick="setAccent('#a259ff',this)" title="Purple"></div>
+                <div class="accent-dot" style="background:#00e5c0" onclick="setAccent('#00e5c0',this)" title="Teal"></div>
+                <div class="accent-dot" style="background:#ff6b6b" onclick="setAccent('#ff6b6b',this)" title="Red"></div>
+                <div class="accent-dot" style="background:#ffd166" onclick="setAccent('#ffd166',this)" title="Yellow"></div>
+                <div class="accent-dot" style="background:#ff9f43" onclick="setAccent('#ff9f43',this)" title="Orange"></div>
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Font Size</div>
+              <div class="s-row">
+                <div><div class="s-label">Chat Font Size</div><div class="s-hint">Message text ka size</div></div>
+                <select class="s-select" id="fontSize" onchange="setFontSize(this.value)">
+                  <option value="14">Small (14px)</option>
+                  <option value="16" selected>Medium (16px)</option>
+                  <option value="18">Large (18px)</option>
+                  <option value="20">Extra Large (20px)</option>
+                </select>
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Chat Display</div>
+              <div class="s-row">
+                <div><div class="s-label">Compact Mode</div><div class="s-hint">Messages zyada compact dikhenge</div></div>
+                <div class="s-toggle" id="compactToggle" onclick="toggleSetting('compact',this)"></div>
+              </div>
+              <div class="s-row">
+                <div><div class="s-label">Show Timestamps</div><div class="s-hint">Har message ke saath time dikhao</div></div>
+                <div class="s-toggle" id="timestampToggle" onclick="toggleSetting('timestamp',this)"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Memory -->
+          <div class="settings-panel" id="sp-memory">
+            <div class="settings-title">Memory</div>
+            <div class="settings-desc">AI aapke baare mein kya yaad rakhe</div>
+            <div class="s-section">
+              <div class="s-section-title">Memory Settings</div>
+              <div class="s-row">
+                <div><div class="s-label">Memory Enable</div><div class="s-hint">AI aapki preferences yaad rakhega</div></div>
+                <div class="s-toggle on" id="memoryToggle" onclick="toggleSetting('memory',this)"></div>
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Saved Memories</div>
+              <div class="memory-list" id="memoryList"></div>
+              <div style="display:flex;gap:.5rem;margin-top:.8rem">
+                <input class="field" id="memInput" placeholder="Kuch add karo e.g. Mera naam Mahesh hai" style="margin-bottom:0;flex:1"/>
+                <button class="s-btn primary" onclick="addMemory()" style="padding:.45rem .9rem">+ Add</button>
+              </div>
+            </div>
+            <div class="s-row" style="margin-top:1rem">
+              <div><div class="s-label">All Memories Clear</div></div>
+              <button class="s-btn danger" onclick="clearMemories()">🗑️ Clear All</button>
+            </div>
+          </div>
+
+          <!-- Voice -->
+          <div class="settings-panel" id="sp-voice">
+            <div class="settings-title">Voice Settings</div>
+            <div class="settings-desc">Voice input aur output configure karo</div>
+            <div class="s-section">
+              <div class="s-section-title">Voice Input</div>
+              <div class="s-row">
+                <div><div class="s-label">Voice Input Language</div></div>
+                <select class="s-select" id="voiceLang" onchange="saveSettings()">
+                  <option value="hi-IN" selected>Hindi (India)</option>
+                  <option value="en-IN">English (India)</option>
+                  <option value="en-US">English (US)</option>
+                </select>
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Voice Output</div>
+              <div class="s-row">
+                <div><div class="s-label">Auto Speak Responses</div><div class="s-hint">Agent ka jawab automatically sunao</div></div>
+                <div class="s-toggle" id="autoSpeakToggle" onclick="toggleSetting('autoSpeak',this)"></div>
+              </div>
+              <div class="s-row">
+                <div><div class="s-label">Speech Speed</div></div>
+                <select class="s-select" id="speechRate" onchange="saveSettings()">
+                  <option value="0.7">Slow</option>
+                  <option value="0.9" selected>Normal</option>
+                  <option value="1.1">Fast</option>
+                  <option value="1.3">Very Fast</option>
+                </select>
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Test Voice</div>
+              <button class="s-btn primary" onclick="testVoice()">🔊 Voice Test Karo</button>
+            </div>
+          </div>
+
+          <!-- General -->
+          <div class="settings-panel" id="sp-general">
+            <div class="settings-title">General</div>
+            <div class="settings-desc">General app settings</div>
+            <div class="s-section">
+              <div class="s-section-title">Preferences</div>
+              <div class="s-row">
+                <div><div class="s-label">Enter to Send</div><div class="s-hint">Enter dabane se message send hoga</div></div>
+                <div class="s-toggle on" id="enterSendToggle" onclick="toggleSetting('enterSend',this)"></div>
+              </div>
+              <div class="s-row">
+                <div><div class="s-label">Show Welcome Message</div><div class="s-hint">Naya chat khulne par welcome dikhao</div></div>
+                <div class="s-toggle on" id="welcomeToggle" onclick="toggleSetting('welcome',this)"></div>
+              </div>
+              <div class="s-row">
+                <div><div class="s-label">Funny Mode Default</div><div class="s-hint">Har chat mein funny mode on rahega</div></div>
+                <div class="s-toggle" id="funnyDefaultToggle" onclick="toggleSetting('funnyDefault',this)"></div>
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Display Name</div>
+              <div class="s-row">
+                <div><div class="s-label">Your Name</div><div class="s-hint">AI is naam se address karega</div></div>
+                <input class="s-input" id="userNameInput" placeholder="Apna naam" oninput="updateDisplayName(this.value)"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- Security -->
+          <div class="settings-panel" id="sp-security">
+            <div class="settings-title">Security</div>
+            <div class="settings-desc">API key aur session management</div>
+            <div class="s-section">
+              <div class="s-section-title">API Key</div>
+              <div class="s-row">
+                <div><div class="s-label">Current API Key</div><div class="s-hint" id="keyStatus">No key connected</div></div>
+                <button class="s-btn" onclick="changeKey()">🔑 Change Key</button>
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Session</div>
+              <div class="s-row">
+                <div><div class="s-label">Clear Session Data</div><div class="s-hint">API key aur settings clear</div></div>
+                <button class="s-btn danger" onclick="clearSession()">🗑️ Clear</button>
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Tips</div>
+              <div style="font-size:.78rem;color:var(--muted);line-height:1.8;background:var(--surface);border:1px solid var(--rim);border-radius:var(--r);padding:1rem">
+                🔒 API key kabhi share mat karo<br>
+                🔒 Public computer pe key mat save karo<br>
+                🔒 Suspicious activity par turant key delete karo<br>
+                🔒 API key console.anthropic.com pe manage karo
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Controls -->
+          <div class="settings-panel" id="sp-data">
+            <div class="settings-title">Data Controls</div>
+            <div class="settings-desc">Apna data manage karo</div>
+            <div class="s-section">
+              <div class="s-section-title">Export</div>
+              <div class="s-row">
+                <div><div class="s-label">Chat History Export</div><div class="s-hint">Saari chats download karo</div></div>
+                <button class="s-btn" onclick="openExport()">📥 Export</button>
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Delete Data</div>
+              <div class="s-row">
+                <div><div class="s-label">Chat History Clear</div><div class="s-hint">Saari saved chats delete</div></div>
+                <button class="s-btn danger" onclick="clearAllHistory()">🗑️ Clear History</button>
+              </div>
+              <div class="s-row">
+                <div><div class="s-label">All App Data</div><div class="s-hint">Settings, memories, history — sab</div></div>
+                <button class="s-btn danger" onclick="clearAllData()">💣 Reset App</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upgrade -->
+          <div class="settings-panel" id="sp-upgrade">
+            <div class="settings-title">Plans & Upgrade</div>
+            <div class="settings-desc">Apne plan ko upgrade karo</div>
+            <div class="s-section">
+              <div class="s-section-title">Current Usage</div>
+              <div class="usage-stat">
+                <div class="usage-label">Free Messages Today</div>
+                <div class="usage-val" id="usageVal">0 / 5</div>
+                <div class="usage-bar"><div class="usage-fill" id="usageFill" style="width:0%"></div></div>
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Available Plans</div>
+              <div class="plan-cards">
+                <div class="plan-card current">
+                  <div class="plan-price">₹0<span>/day</span></div>
+                  <div class="plan-name">Free · 5 msgs/day</div>
+                  <button class="plan-btn current-btn">Current Plan</button>
+                </div>
+                <a class="plan-card" href="https://rzp.io/rzp/zMbyn2Y" target="_blank">
+                  <div class="plan-price">₹10</div>
+                  <div class="plan-name">Starter · 50 msgs</div>
+                  <button class="plan-btn">Buy Now</button>
+                </a>
+                <a class="plan-card" href="https://rzp.io/rzp/TCqijQLD" target="_blank">
+                  <div class="plan-price">₹50</div>
+                  <div class="plan-name">Value · 300 msgs</div>
+                  <button class="plan-btn">Buy Now</button>
+                </a>
+                <a class="plan-card" href="https://rzp.io/rzp/xjupt9ZI" target="_blank">
+                  <div class="plan-price">₹49<span>/mo</span></div>
+                  <div class="plan-name">Unlimited</div>
+                  <button class="plan-btn">Subscribe</button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Support -->
+          <div class="settings-panel" id="sp-support">
+            <div class="settings-title">Support</div>
+            <div class="settings-desc">Help chahiye? Hum yahan hain!</div>
+            <div class="s-section">
+              <div class="s-section-title">Contact</div>
+              <div class="s-row">
+                <div><div class="s-label">Email Support</div><div class="s-hint">Mahesh135757@gmail.com</div></div>
+                <a href="mailto:Mahesh135757@gmail.com" class="s-btn">📧 Email</a>
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Feedback</div>
+              <textarea class="field" placeholder="Bug report ya feature request likhо..." style="height:100px;resize:vertical;margin-bottom:.5rem"></textarea>
+              <button class="s-btn primary" onclick="showToast('✅ Feedback send ho gaya! Shukriya 🙏')">📤 Send Feedback</button>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Legal</div>
+              <div class="s-row">
+                <div class="s-label">Terms & Conditions</div>
+                <a href="/terms.html" target="_blank" class="s-btn">View →</a>
+              </div>
+              <div class="s-row">
+                <div class="s-label">Privacy Policy</div>
+                <a href="/privacy.html" target="_blank" class="s-btn">View →</a>
+              </div>
+              <div class="s-row">
+                <div class="s-label">Refund Policy</div>
+                <a href="/refund.html" target="_blank" class="s-btn">View →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- About -->
+          <div class="settings-panel" id="sp-about">
+            <div class="settings-title">About Mac Mythos</div>
+            <div style="text-align:center;padding:1.5rem 0 2rem">
+              <div class="about-logo">MAC MYTHOS</div>
+              <div style="font-size:.82rem;color:var(--muted);line-height:1.7">Multi-Agent AI Platform<br>Built in India 🇮🇳 · Powered by Claude AI</div>
+              <div style="display:flex;gap:.5rem;justify-content:center;margin-top:.8rem">
+                <span class="pill">v2.0.0</span>
+                <span class="pill green">Production</span>
+                <span class="pill yellow">India 🇮🇳</span>
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Tech Stack</div>
+              <div style="font-size:.8rem;color:var(--muted);line-height:2">
+                🤖 AI: Anthropic Claude (claude-sonnet-4)<br>
+                ☁️ Proxy: Cloudflare Workers (Rate Limited)<br>
+                🌐 Hosting: Netlify<br>
+                💳 Payments: Razorpay<br>
+                🎨 UI: Pure HTML/CSS/JS (No Framework)
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Disclaimer</div>
+              <div style="font-size:.75rem;color:var(--muted);line-height:1.7;background:var(--surface);border:1px solid var(--rim);border-radius:var(--r);padding:1rem">
+                Mac Mythos AI responses informational purposes ke liye hain. Health ya legal advice ke liye qualified professional se milein. AI mistakes kar sakta hai — important decisions mein expert se verify karein.
+              </div>
+            </div>
+          </div>
+
+          <!-- Account -->
+          <div class="settings-panel" id="sp-account">
+            <div class="settings-title">Account</div>
+            <div class="settings-desc">Apni profile manage karo</div>
+            <div class="s-section">
+              <div class="s-section-title">Profile</div>
+              <div class="s-row">
+                <div><div class="s-label">Display Name</div></div>
+                <input class="s-input" id="accountName" placeholder="Apna naam" oninput="updateDisplayName(this.value)"/>
+              </div>
+              <div class="s-row">
+                <div><div class="s-label">Email</div></div>
+                <input class="s-input" placeholder="email@example.com" id="accountEmail"/>
+              </div>
+              <div class="s-row" style="margin-top:.5rem">
+                <div></div>
+                <button class="s-btn primary" onclick="saveProfile()">💾 Save Profile</button>
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">API Key</div>
+              <div class="s-row">
+                <div><div class="s-label">Connected Key</div><div class="s-hint" id="accountKeyStatus">Not connected</div></div>
+                <button class="s-btn" onclick="changeKey()">🔑 Change</button>
+              </div>
+            </div>
+            <div class="s-section">
+              <div class="s-section-title">Danger Zone</div>
+              <div class="s-row">
+                <div><div class="s-label">Reset Everything</div><div class="s-hint">App reset ho jayegi</div></div>
+                <button class="s-btn danger" onclick="clearAllData()">💣 Reset</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- end settings page -->
+
+  </main><!-- end main -->
+</div><!-- end app -->
+
+<script>
+'use strict';
+
+// ══════════════════════════════════════════════
+//  MAC MYTHOS — COMPLETE JAVASCRIPT ENGINE
+// ══════════════════════════════════════════════
+
+// ── CONSTANTS ─────────────────────────────────
+const PROXY_URL = 'https://makmythosproxy.mahesh135757.workers.dev';
+const FREE_LIMIT = 5;
+
+const AGENTS = [
+  { id:'creator', emoji:'🎨', label:'Creator', color:'#ff6b6b', role:'Creative Arts',
+    uses:['Writing','Music','Design','Poetry','Storytelling'],
+    system:'You are the Creator Agent in Mac Mythos — specializing in art, creative writing, music, design, and all creative expression. Be poetic, vivid, and inspiring. Use emojis naturally. Max 100 words unless asked for more. If funny mode: be hilariously creative!' },
+  { id:'thinker', emoji:'🧠', label:'Thinker', color:'#5b6fff', role:'Strategy & Logic',
+    uses:['Philosophy','Analysis','Strategy','Debate','Planning'],
+    system:'You are the Thinker Agent in Mac Mythos — expert in philosophy, logic, strategy, and deep reasoning. Be analytical and precise. Use structured thinking. Max 100 words unless asked for more. If funny mode: be cleverly witty!' },
+  { id:'coder', emoji:'💻', label:'Coder', color:'#ffd166', role:'Programming',
+    uses:['All Languages','Debugging','Architecture','APIs','Algorithms'],
+    system:'You are the Coder Agent in Mac Mythos — expert in all programming languages, systems, and software architecture. Be concise and technical but friendly. Include code when relevant. Max 150 words. If funny mode: add programming jokes!' },
+  { id:'healer', emoji:'🏥', label:'Healer', color:'#00e5c0', role:'Health & Wellness',
+    uses:['Health Info','Wellness Tips','Mental Care','Nutrition','Fitness'],
+    system:'You are the Healer Agent in Mac Mythos — specializing in health info, wellness, and mental wellbeing. Be warm and empathetic. ALWAYS end response with: "⚕️ Note: Yeh information educational hai — serious issues ke liye doctor se milein." Max 100 words.' },
+  { id:'scholar', emoji:'📚', label:'Scholar', color:'#a259ff', role:'Knowledge',
+    uses:['History','Science','Literature','Education','Research'],
+    system:'You are the Scholar Agent in Mac Mythos — master of history, science, literature, and education. Be enthusiastic and knowledgeable. Use examples. Max 100 words unless asked for more. If funny mode: make learning fun and hilarious!' },
+];
+
+// ── STATE ──────────────────────────────────────
+let state = {
+  activeAgent: AGENTS[0],
+  funnyMode: false,
+  autoSpeak: false,
+  isListening: false,
+  recognition: null,
+  msgId: 0,
+  convHistory: [],
+  currentChatId: null,
+  settings: {},
+  memories: [],
+  chatHistories: {},
+};
+
+// ── LOCAL STORAGE ──────────────────────────────
+function lsGet(k, def=null) {
+  try { const v=localStorage.getItem(k); return v!==null?JSON.parse(v):def; } catch(e){ return def; }
+}
+function lsSet(k,v) { try{localStorage.setItem(k,JSON.stringify(v));}catch(e){} }
+
+// ── SETTINGS LOAD/SAVE ─────────────────────────
+function loadSettings() {
+  state.settings = lsGet('mm_settings', {
+    enterSend:true, welcome:true, funnyDefault:false,
+    compact:false, timestamp:false, autoSpeak:false,
+    memory:true, voiceLang:'hi-IN', speechRate:'0.9',
+    userName:'', accent:'#5b6fff'
+  });
+  state.memories = lsGet('mm_memories', []);
+  applySettings();
+}
+function applySettings() {
+  const s = state.settings;
+  setToggleUI('enterSendToggle', s.enterSend);
+  setToggleUI('welcomeToggle', s.welcome);
+  setToggleUI('funnyDefaultToggle', s.funnyDefault);
+  setToggleUI('compactToggle', s.compact);
+  setToggleUI('timestampToggle', s.timestamp);
+  setToggleUI('autoSpeakToggle', s.autoSpeak);
+  setToggleUI('memoryToggle', s.memory);
+  if(s.voiceLang) { const el=document.getElementById('voiceLang'); if(el)el.value=s.voiceLang; }
+  if(s.speechRate) { const el=document.getElementById('speechRate'); if(el)el.value=s.speechRate; }
+  if(s.userName) {
+    updateDisplayName(s.userName);
+    const ui=document.getElementById('userNameInput'); if(ui)ui.value=s.userName;
+    const ai=document.getElementById('accountName'); if(ai)ai.value=s.userName;
+  }
+  state.funnyMode = s.funnyDefault||false;
+  state.autoSpeak = s.autoSpeak||false;
+  updateFunnyUI(); updateSpeakUI();
+  renderMemoryList();
+}
+function saveSettings() {
+  const s = state.settings;
+  const vl=document.getElementById('voiceLang'); if(vl)s.voiceLang=vl.value;
+  const sr=document.getElementById('speechRate'); if(sr)s.speechRate=sr.value;
+  lsSet('mm_settings', s);
+}
+function toggleSetting(key, el) {
+  state.settings[key] = !state.settings[key];
+  setToggleUI(el.id, state.settings[key]);
+  if(key==='autoSpeak') { state.autoSpeak=state.settings[key]; updateSpeakUI(); }
+  if(key==='funnyDefault') { state.funnyMode=state.settings[key]; updateFunnyUI(); }
+  lsSet('mm_settings', state.settings);
+  showToast(state.settings[key]?'✅ Turned on':'⚫ Turned off');
+}
+function setToggleUI(id, on) {
+  const el=document.getElementById(id); if(!el)return;
+  el.classList.toggle('on',!!on);
+}
+
+// ── STARFIELD ──────────────────────────────────
+(function(){
+  const c=document.getElementById('starfield');
+  if(!c)return;
+  const x=c.getContext('2d');
+  let stars=[];
+  function resize(){c.width=window.innerWidth;c.height=window.innerHeight;}
+  function init(){stars=Array.from({length:160},()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.3,o:Math.random()}));}
+  function draw(){
+    x.clearRect(0,0,c.width,c.height);
+    stars.forEach(s=>{
+      x.beginPath();x.arc(s.x,s.y,s.r,0,Math.PI*2);
+      x.fillStyle=`rgba(255,255,255,${s.o})`;x.fill();
+      s.o+=(Math.random()-.5)*.015;s.o=Math.max(.05,Math.min(.9,s.o));
+    });
+    requestAnimationFrame(draw);
+  }
+  resize();init();draw();
+  window.addEventListener('resize',()=>{resize();init();});
+})();
+
+// ── TOAST ──────────────────────────────────────
+let toastTimer;
+function showToast(msg, dur=2500) {
+  const t=document.getElementById('toast');
+  if(!t)return;
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'), dur);
+}
+
+// ── SIDEBAR ────────────────────────────────────
+function toggleSidebar() {
+  const sb=document.getElementById('sidebar');
+  const bd=document.getElementById('sb-backdrop');
+  const isOpen=sb.classList.contains('open')||!sb.classList.contains('hidden');
+  if(window.innerWidth>768) {
+    sb.classList.toggle('hidden');
+    document.getElementById('main').classList.toggle('full');
+  } else {
+    sb.classList.toggle('open');
+    bd.classList.toggle('show');
+  }
+}
+function closeSidebar() {
+  const sb=document.getElementById('sidebar');
+  const bd=document.getElementById('sb-backdrop');
+  if(window.innerWidth<=768) { sb.classList.remove('open'); bd.classList.remove('show'); }
+}
+
+// ── PAGE NAVIGATION ────────────────────────────
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const pg=document.getElementById('page-'+name);
+  if(pg) pg.classList.add('active');
+
+  document.querySelectorAll('[id^="nav-"]').forEach(b=>b.classList.remove('active'));
+  const nb=document.getElementById('nav-'+name);
+  if(nb) nb.classList.add('active');
+
+  const titles={home:'Mac Mythos — AI Agent Platform',chat:'Chat',agents:'AI Agents',pricing:'Plans & Pricing',settings:'Settings'};
+  document.getElementById('topbarTitle').textContent=titles[name]||'Mac Mythos';
+
+  if(name==='agents') renderAgentsPage();
+  if(name==='pricing') renderPricingPage();
+  if(name==='settings') { updateKeyStatus(); updateUsageStats(); renderMemoryList(); }
+  closeSidebar();
+}
+
+// ── SETTINGS PANEL ─────────────────────────────
+function showSettingsPanel(name) {
+  document.querySelectorAll('.settings-panel').forEach(p=>p.classList.remove('active'));
+  const p=document.getElementById('sp-'+name);
+  if(p) p.classList.add('active');
+  document.querySelectorAll('.settings-nav-item').forEach(i=>i.classList.remove('active'));
+  const items=document.querySelectorAll('.settings-nav-item');
+  items.forEach(i=>{if(i.textContent.toLowerCase().includes(name.toLowerCase().substring(0,5)))i.classList.add('active');});
+  if(name==='upgrade') updateUsageStats();
+}
+function updateKeyStatus() {
+  const key=sessionStorage.getItem('mm_key')||'';
+  const status=key?'Connected: '+key.substring(0,12)+'...':'Not connected';
+  const els=['keyStatus','accountKeyStatus'];
+  els.forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=status;});
+}
+function updateUsageStats() {
+  const used=parseInt(sessionStorage.getItem(todayKey())||'0');
+  const left=Math.max(0,FREE_LIMIT-used);
+  const uv=document.getElementById('usageVal');
+  const uf=document.getElementById('usageFill');
+  if(uv)uv.textContent=used+' / '+FREE_LIMIT;
+  if(uf)uf.style.width=(used/FREE_LIMIT*100)+'%';
+}
+
+// ── ACCENT COLOR ───────────────────────────────
+function setAccent(color, el) {
+  document.documentElement.style.setProperty('--a', color);
+  document.querySelectorAll('.accent-dot').forEach(d=>d.classList.remove('sel'));
+  el.classList.add('sel');
+  state.settings.accent=color;
+  lsSet('mm_settings',state.settings);
+  showToast('🎨 Color updated!');
+}
+function setFontSize(size) {
+  document.documentElement.style.setProperty('--chat-fs', size+'px');
+  state.settings.fontSize=size;
+  lsSet('mm_settings',state.settings);
+}
+
+// ── USER PROFILE ───────────────────────────────
+function updateDisplayName(name) {
+  state.settings.userName=name;
+  const dn=document.getElementById('displayName'); if(dn)dn.textContent=name||'User';
+  const ui=document.getElementById('userNameInput'); if(ui&&ui.value!==name)ui.value=name;
+  const ai=document.getElementById('accountName'); if(ai&&ai.value!==name)ai.value=name;
+  lsSet('mm_settings',state.settings);
+}
+function saveProfile() {
+  const name=document.getElementById('accountName').value;
+  const email=document.getElementById('accountEmail').value;
+  updateDisplayName(name);
+  state.settings.email=email;
+  lsSet('mm_settings',state.settings);
+  showToast('✅ Profile saved!');
+}
+
+// ── API KEY ────────────────────────────────────
+let apiKey = sessionStorage.getItem('mm_key')||'';
+function saveApiKey() {
+  const v=document.getElementById('apiKeyInput').value.trim();
+  const f=document.getElementById('apiKeyInput');
+  if(!v.startsWith('sk-ant')){ f.classList.add('err'); showToast('❌ Valid key "sk-ant-..." chahiye'); return; }
+  f.classList.remove('err');
+  apiKey=v; sessionStorage.setItem('mm_key',v);
+  closeModal('apiModal');
+  showToast('✅ Agents activated! Baat karo 🚀');
+  updateKeyStatus();
+}
+function changeKey() {
+  sessionStorage.removeItem('mm_key'); apiKey='';
+  document.getElementById('apiKeyInput').value='';
+  document.getElementById('apiModal').classList.add('show');
+  updateKeyStatus();
+}
+function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+
+if(!apiKey) document.getElementById('apiModal').classList.add('show');
+document.getElementById('apiKeyInput').addEventListener('keydown',e=>{ if(e.key==='Enter')saveApiKey(); });
+
+// ── FREE MESSAGE COUNTER ───────────────────────
+function todayKey() { return 'mm_free_'+new Date().toISOString().slice(0,10); }
+function getFreeLeft() { return Math.max(0,FREE_LIMIT-parseInt(sessionStorage.getItem(todayKey())||'0')); }
+function useFree() {
+  const k=todayKey();
+  sessionStorage.setItem(k, parseInt(sessionStorage.getItem(k)||'0')+1);
+  updateCounterUI();
+}
+function updateCounterUI() {
+  const n=getFreeLeft();
+  const ct=document.getElementById('counterText'); if(ct)ct.textContent=n+' free';
+  const cf=document.getElementById('cpillFill'); if(cf){ cf.style.width=(n/FREE_LIMIT*100)+'%'; cf.style.background=n<=1?'linear-gradient(90deg,#ff6b6b,#ffd166)':'linear-gradient(90deg,var(--a),var(--c))'; }
+}
+updateCounterUI();
+
+// ── AGENT CHIPS ────────────────────────────────
+function renderAgentChips() {
+  const el=document.getElementById('agentChips'); if(!el)return;
+  el.innerHTML='';
+  AGENTS.forEach(a=>{
+    const b=document.createElement('button');
+    b.className='agent-chip'+(a.id===state.activeAgent.id?' active':'');
+    b.textContent=a.emoji+' '+a.label;
+    b.style.setProperty('--c',a.color);
+    b.onclick=()=>{ state.activeAgent=a; state.convHistory=[]; renderAgentChips(); showToast(a.emoji+' '+a.label+' selected!'); };
+    el.appendChild(b);
+  });
+  const fc=document.getElementById('funnyChip');
+  const sc=document.getElementById('speakChip');
+  if(fc)fc.classList.toggle('on',state.funnyMode);
+  if(sc)sc.classList.toggle('on',state.autoSpeak);
+}
+renderAgentChips();
+
+// ── AGENTS PAGE ────────────────────────────────
+function renderAgentsPage() {
+  const el=document.getElementById('agentsGrid'); if(!el)return;
+  el.innerHTML='';
+  AGENTS.forEach(a=>{
+    const d=document.createElement('div');
+    d.className='card';
+    d.style.borderLeft='3px solid '+a.color;
+    d.innerHTML=`
+      <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem">
+        <div style="width:46px;height:46px;border-radius:12px;background:${a.color}22;border:1px solid ${a.color}44;display:flex;align-items:center;justify-content:center;font-size:1.4rem">${a.emoji}</div>
+        <div>
+          <div class="card-title">${a.label}</div>
+          <div style="font-size:.73rem;color:${a.color}">${a.role}</div>
+        </div>
+        <button onclick="startChatWith('${a.id}')" style="margin-left:auto;background:${a.color};color:#fff;border:none;border-radius:8px;padding:.4rem .9rem;font-size:.78rem;font-weight:600;cursor:pointer">Chat →</button>
+      </div>
+      <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.6rem">${a.uses.map(u=>`<span class="pill" style="color:${a.color};border-color:${a.color}33;background:${a.color}11">${u}</span>`).join('')}</div>
+      <div class="card-desc">${a.system.split('.')[0]}.</div>
+      ${a.id==='healer'?'<div style="margin-top:.5rem;font-size:.7rem;color:var(--muted);font-style:italic">⚕️ Health info educational only — professional advice nahi hai</div>':''}
+    `;
+    el.appendChild(d);
+  });
+}
+
+// ── PRICING PAGE ───────────────────────────────
+function renderPricingPage() {
+  const el=document.getElementById('pricingGrid'); if(!el||el.children.length)return;
+  const plans=[
+    {link:'https://rzp.io/rzp/zMbyn2Y',amount:'₹10',name:'Starter',desc:'50 Messages',features:['50 AI messages','All 5 agents','Voice support'],popular:false},
+    {link:'https://rzp.io/rzp/TCqijQLD',amount:'₹50',name:'Value Pack',desc:'300 Messages',features:['300 AI messages','All 5 agents','Priority support','Funny mode'],popular:true},
+    {link:'https://rzp.io/rzp/xjupt9ZI',amount:'₹49/mo',name:'Unlimited',desc:'Monthly Subscription',features:['Unlimited messages','All agents','All features','Best value'],popular:false},
+  ];
+  plans.forEach(p=>{
+    const d=document.createElement('a');
+    d.href=p.link; d.target='_blank';
+    d.className='card'; d.style.textAlign='center'; d.style.display='block';
+    if(p.popular) d.style.borderColor='var(--c)';
+    d.innerHTML=`
+      ${p.popular?'<div style="font-family:var(--mono);font-size:.58rem;color:var(--c);letter-spacing:.1em;margin-bottom:.5rem">⭐ BEST VALUE</div>':''}
+      <div style="font-size:2rem;font-weight:700;color:#fff;margin-bottom:.2rem">${p.amount}</div>
+      <div style="font-size:.85rem;font-weight:600;margin-bottom:.3rem">${p.name}</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-bottom:.8rem">${p.desc}</div>
+      <div style="display:flex;flex-direction:column;gap:.3rem;text-align:left;margin-bottom:1rem">
+        ${p.features.map(f=>`<div style="font-size:.75rem;color:var(--text2)">✓ ${f}</div>`).join('')}
+      </div>
+      <button style="width:100%;background:${p.popular?'linear-gradient(135deg,var(--c),var(--a))':'linear-gradient(135deg,var(--a),var(--b))'};color:#fff;border:none;border-radius:8px;padding:.55rem;font-weight:600;font-size:.82rem">Buy Now →</button>
+    `;
+    el.appendChild(d);
+  });
+}
+
+// ── MEMORY ─────────────────────────────────────
+function addMemory() {
+  const inp=document.getElementById('memInput');
+  const text=(inp.value||'').trim();
+  if(!text) return;
+  state.memories.push({id:Date.now(),text});
+  lsSet('mm_memories',state.memories);
+  inp.value='';
+  renderMemoryList();
+  showToast('🧠 Memory saved!');
+}
+function deleteMemory(id) {
+  state.memories=state.memories.filter(m=>m.id!==id);
+  lsSet('mm_memories',state.memories);
+  renderMemoryList();
+  showToast('🗑️ Memory deleted');
+}
+function clearMemories() {
+  if(!confirm('All memories delete karo?')) return;
+  state.memories=[];
+  lsSet('mm_memories',[]);
+  renderMemoryList();
+  showToast('🗑️ Memories cleared');
+}
+function renderMemoryList() {
+  const el=document.getElementById('memoryList'); if(!el)return;
+  if(!state.memories.length){ el.innerHTML='<div style="font-size:.78rem;color:var(--muted);padding:.5rem 0">Abhi koi memory nahi hai. Upar se add karo!</div>'; return; }
+  el.innerHTML=state.memories.map(m=>`
+    <div class="memory-item">
+      <span class="mi-text">${m.text}</span>
+      <button class="mi-del" onclick="deleteMemory(${m.id})">✕</button>
+    </div>`).join('');
+}
+
+// ── VOICE ──────────────────────────────────────
+function stopSpeaking() { if('speechSynthesis'in window) window.speechSynthesis.cancel(); }
+function speak(text) {
+  if(!state.autoSpeak||!('speechSynthesis'in window)) return;
+  stopSpeaking();
+  const u=new SpeechSynthesisUtterance(text.replace(/[^\w\s.,!?₹\u0900-\u097F]/g,' '));
+  const s=state.settings;
+  u.lang=s.voiceLang||'hi-IN';
+  u.rate=parseFloat(s.speechRate||'0.9');
+  u.pitch=1;
+  window.speechSynthesis.speak(u);
+}
+function speakText(text) {
+  stopSpeaking();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang=state.settings.voiceLang||'hi-IN';
+  u.rate=parseFloat(state.settings.speechRate||'0.9');
+  window.speechSynthesis.speak(u);
+}
+function testVoice() { speakText('Namaste! Main Mac Mythos hoon. Voice test ho rahi hai.'); showToast('🔊 Testing voice...'); }
+function toggleVoice() {
+  if(!('webkitSpeechRecognition'in window)&&!('SpeechRecognition'in window)){ showToast('❌ Chrome use karo voice ke liye'); return; }
+  if(state.isListening){ state.recognition&&state.recognition.stop(); return; }
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  state.recognition=new SR();
+  state.recognition.lang=state.settings.voiceLang||'hi-IN';
+  state.recognition.interimResults=false;
+  state.recognition.onstart=()=>{ state.isListening=true; document.getElementById('micBtn').classList.add('listening'); document.getElementById('voiceInd').style.display='flex'; };
+  state.recognition.onresult=e=>{ document.getElementById('chatTextarea').value=e.results[0][0].transcript; autoResize(document.getElementById('chatTextarea')); sendMessage(); };
+  state.recognition.onend=()=>{ state.isListening=false; document.getElementById('micBtn').classList.remove('listening'); document.getElementById('voiceInd').style.display='none'; };
+  state.recognition.onerror=()=>{ showToast('❌ Voice error. Phir try karo.'); state.recognition.stop(); };
+  state.recognition.start();
+}
+function updateFunnyUI() {
+  const b=document.getElementById('funnyChip'); if(b)b.classList.toggle('on',state.funnyMode);
+  const b2=document.getElementById('funnyBtn'); if(b2)b2.classList.toggle('on',state.funnyMode);
+}
+function updateSpeakUI() {
+  const b=document.getElementById('speakChip'); if(b)b.classList.toggle('on',state.autoSpeak);
+  const b2=document.getElementById('speakBtn'); if(b2)b2.classList.toggle('on',state.autoSpeak);
+}
+function toggleFunny() {
+  state.funnyMode=!state.funnyMode;
+  updateFunnyUI();
+  showToast(state.funnyMode?'😂 Funny mode ON!':'😐 Funny mode OFF');
+}
+function toggleSpeak() {
+  state.autoSpeak=!state.autoSpeak;
+  state.settings.autoSpeak=state.autoSpeak;
+  setToggleUI('autoSpeakToggle',state.autoSpeak);
+  updateSpeakUI();
+  lsSet('mm_settings',state.settings);
+  showToast(state.autoSpeak?'🔊 Auto speak ON':'🔇 Auto speak OFF');
+}
+
+// ── EMOJI ──────────────────────────────────────
+const EMOJIS='😊 😂 🤔 ❤️ 👍 🔥 ✨ 😎 🙏 💪 🎉 😅 🤖 💡 👋 😍 🥳 😢 🤣 🌟 💰 🚀 🎯 👑 🙌 😄 🤩 💯 🎊 ⭐ 🌈 🎵 💻 📚 🏥 🎨'.split(' ');
+(function buildEmoji(){
+  const es=document.getElementById('emojiStrip'); if(!es)return;
+  EMOJIS.forEach(e=>{ const b=document.createElement('button'); b.className='es-btn'; b.textContent=e; b.onclick=()=>{ const t=document.getElementById('chatTextarea'); t.value+=e; t.focus(); autoResize(t); }; es.appendChild(b); });
+})();
+function toggleEmoji() { const es=document.getElementById('emojiStrip'); es.classList.toggle('show'); }
+
+// ── TEXTAREA AUTO-RESIZE ───────────────────────
+function autoResize(el) {
+  el.style.height='auto';
+  el.style.height=Math.min(el.scrollHeight,120)+'px';
+}
+
+// ── SEND KEY ───────────────────────────────────
+function handleKey(e) {
+  const enterSend = state.settings.enterSend!==false;
+  if(e.key==='Enter'&&!e.shiftKey&&enterSend){ e.preventDefault(); sendMessage(); }
+}
+
+// ── CHAT HISTORY ───────────────────────────────
+function saveChatHistory() {
+  if(!state.currentChatId) return;
+  const msgs=document.getElementById('messagesArea');
+  const texts=[];
+  msgs.querySelectorAll('.msg:not(#welcome-msg)').forEach(m=>{
+    const role=m.classList.contains('user')?'user':'agent';
+    const b=m.querySelector('.msg-bubble'); if(b) texts.push({role,text:b.textContent.trim()});
+  });
+  if(!texts.length) return;
+  const title=texts[0].text.substring(0,35)+(texts[0].text.length>35?'...':'');
+  state.chatHistories[state.currentChatId]={id:state.currentChatId,title,msgs:texts,ts:Date.now()};
+  lsSet('mm_chats',state.chatHistories);
+  renderChatHistory();
+}
+function renderChatHistory() {
+  const el=document.getElementById('chatHistory'); if(!el)return;
+  const chats=Object.values(state.chatHistories).sort((a,b)=>b.ts-a.ts).slice(0,20);
+  if(!chats.length){ el.innerHTML='<div style="padding:.5rem .9rem;font-size:.72rem;color:var(--muted)">No chats yet</div>'; return; }
+  el.innerHTML=chats.map(c=>`
+    <div class="history-item" onclick="loadChat('${c.id}')">
+      <span class="hi-icon">💬</span>
+      <span class="hi-title">${c.title}</span>
+      <button class="hi-del" onclick="event.stopPropagation();deleteChat('${c.id}')">✕</button>
+    </div>`).join('');
+}
+function loadChat(id) {
+  const c=state.chatHistories[id]; if(!c)return;
+  state.currentChatId=id;
+  clearChat(false);
+  c.msgs.forEach(m=>{
+    if(m.role==='user') addMsg('user',m.text);
+    else addMsg('agent',m.text,state.activeAgent.label.toUpperCase()+' AGENT',state.activeAgent.emoji,state.activeAgent.color);
+  });
+  showPage('chat'); showToast('📜 Chat loaded!');
+}
+function deleteChat(id) {
+  delete state.chatHistories[id];
+  lsSet('mm_chats',state.chatHistories);
+  renderChatHistory();
+  showToast('🗑️ Chat deleted');
+}
+function clearAllHistory() {
+  if(!confirm('All chat history delete karo?')) return;
+  state.chatHistories={};
+  lsSet('mm_chats',{});
+  renderChatHistory();
+  showToast('🗑️ History cleared');
+}
+function clearAllData() {
+  if(!confirm('Sab kuch reset karo? (API key, settings, memories, history)')) return;
+  sessionStorage.clear(); localStorage.clear();
+  showToast('💥 App reset! Reload ho raha hai...');
+  setTimeout(()=>location.reload(),1500);
+}
+function clearSession() {
+  if(!confirm('Session data clear karo?')) return;
+  sessionStorage.clear(); apiKey='';
+  showToast('✅ Session cleared');
+  setTimeout(()=>location.reload(),1000);
+}
+
+// ── ADD MESSAGE ────────────────────────────────
+function addMsg(role, text, name, emoji, color) {
+  const id='m'+(++state.msgId);
+  const area=document.getElementById('messagesArea');
+  const ts=state.settings.timestamp?`<div style="font-family:var(--mono);font-size:.5rem;color:var(--muted);margin-top:.15rem">${new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'})}</div>`:'';
+  const d=document.createElement('div');
+  d.className='msg '+role; d.id=id;
+  if(role==='agent'){
+    d.innerHTML=`
+      <div class="msg-avatar" style="background:linear-gradient(135deg,${color||'var(--a)'},${color||'var(--b)'}88)">${emoji||'🤖'}</div>
+      <div class="msg-body">
+        <div class="msg-name">${name||'AGENT'}</div>
+        <div class="msg-bubble">${text}</div>
+        ${ts}
+        <div class="msg-actions">
+          <button class="mact" onclick="copyMsg('${id}')">📋 Copy</button>
+          <button class="mact" onclick="speakText(document.querySelector('#${id} .msg-bubble').textContent)">🔊 Hear</button>
+          <button class="mact" onclick="document.getElementById('${id}').remove()">🗑️ Del</button>
+        </div>
+      </div>`;
+  } else {
+    d.innerHTML=`
+      <div class="msg-body" style="align-items:flex-end">
+        <div class="msg-bubble">${text}</div>
+        ${ts}
+        <div class="msg-actions">
+          <button class="mact" onclick="copyMsg('${id}')">📋 Copy</button>
+          <button class="mact" onclick="document.getElementById('${id}').remove()">🗑️ Del</button>
+        </div>
+      </div>
+      <div class="msg-avatar" style="background:var(--rim2)">🧑</div>`;
+  }
+  area.appendChild(d);
+  area.scrollTop=area.scrollHeight;
+}
+function copyMsg(id) {
+  const el=document.querySelector('#'+id+' .msg-bubble');
+  if(!el)return;
+  navigator.clipboard.writeText(el.textContent).then(()=>showToast('📋 Copied!')).catch(()=>showToast('❌ Copy failed'));
+}
+function addTyping() {
+  const area=document.getElementById('messagesArea');
+  const d=document.createElement('div');
+  d.className='msg agent'; d.id='typing-ind';
+  d.innerHTML=`<div class="msg-avatar" style="background:${state.activeAgent.color}33">${state.activeAgent.emoji}</div><div class="msg-body"><div class="msg-name">${state.activeAgent.label.toUpperCase()}</div><div class="msg-bubble"><div class="typing-indicator"><span></span><span></span><span></span></div></div></div>`;
+  area.appendChild(d);
+  area.scrollTop=area.scrollHeight;
+}
+function removeTyping() { const t=document.getElementById('typing-ind'); if(t)t.remove(); }
+
+// ── CLEAR CHAT ─────────────────────────────────
+function clearChat(showMsg=true) {
+  const area=document.getElementById('messagesArea'); if(!area)return;
+  area.innerHTML=`<div class="msg agent" id="welcome-msg"><div class="msg-avatar" style="background:linear-gradient(135deg,var(--a),var(--b))">🤖</div><div class="msg-body"><div class="msg-name">MAC MYTHOS</div><div class="msg-bubble">Namaste! 🙏 Koi bhi agent choose karo aur kuch bhi poochho!</div></div></div>`;
+  state.convHistory=[]; state.currentChatId=null;
+  if(showMsg) showToast('🗑️ Chat cleared');
+}
+
+// ── NEW CHAT ───────────────────────────────────
+function newChat() {
+  state.currentChatId='chat_'+Date.now();
+  clearChat(false);
+  showPage('chat');
+  showToast('✦ New chat!');
+}
+
+// ── SEND MESSAGE ───────────────────────────────
+async function sendMessage() {
+  const ta=document.getElementById('chatTextarea');
+  const text=(ta.value||'').trim();
+  if(!text)return;
+
+  if(!apiKey){ document.getElementById('apiModal').classList.add('show'); return; }
+  if(getFreeLeft()<=0){ document.getElementById('rechargeModal').classList.add('show'); return; }
+
+  ta.value=''; ta.style.height='auto';
+  document.getElementById('sendBtn').disabled=true;
+  useFree();
+
+  if(!state.currentChatId) state.currentChatId='chat_'+Date.now();
+
+  // Build context with memory
+  let systemPrompt=state.activeAgent.system;
+  if(state.settings.memory&&state.memories.length){
+    systemPrompt+='\n\nUser ke baare mein yaad rakho: '+state.memories.map(m=>m.text).join('; ');
+  }
+  if(state.funnyMode) systemPrompt+='\n\nIMPORTANT: Be extra funny, witty, and use humor generously!';
+  const userName=state.settings.userName;
+  if(userName) systemPrompt+=`\n\nUser ka naam ${userName} hai — address karo.`;
+
+  state.convHistory.push({role:'user',content:text});
+  addMsg('user',text);
+  showPage('chat');
+  addTyping();
+
+  try {
+    const res=await fetch(PROXY_URL,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:600,
+        system:systemPrompt,
+        messages:state.convHistory.slice(-12)
+      })
+    });
+    const data=await res.json();
+    removeTyping();
+    if(data.error){
+      const em=data.error.type==='authentication_error'
+        ?'❌ API Key galat hai — "🔑 Key" button click karo'
+        :data.error.type==='rate_limit_error'
+        ?'⏳ Rate limit — 1 minute baad try karo'
+        :'⚠️ Error: '+(data.error.message||'Unknown error');
+      addMsg('agent',em,'SYSTEM','⚠️','#ff6b6b');
+    } else {
+      const reply=data.content?.[0]?.text||'Koi jawab nahi mila.';
+      state.convHistory.push({role:'assistant',content:reply});
+      addMsg('agent',reply,state.activeAgent.label.toUpperCase()+' AGENT',state.activeAgent.emoji,state.activeAgent.color);
+      speak(reply);
+      saveChatHistory();
+    }
+  } catch(err){
+    removeTyping();
+    addMsg('agent','🌐 Network error — internet check karo aur phir try karo.','SYSTEM','⚠️','#ff6b6b');
+  }
+  document.getElementById('sendBtn').disabled=false;
+  ta.focus();
+}
+
+// ── HOME ASK ───────────────────────────────────
+function setSug(text){ document.getElementById('homeInput').value=text; document.getElementById('homeInput').focus(); }
+async function homeAsk() {
+  const text=(document.getElementById('homeInput').value||'').trim();
+  if(!text)return;
+  document.getElementById('homeInput').value='';
+  document.getElementById('chatTextarea').value=text;
+  showPage('chat');
+  await sendMessage();
+}
+function startChatWith(agentId) {
+  const a=AGENTS.find(x=>x.id===agentId);
+  if(a){ state.activeAgent=a; state.convHistory=[]; renderAgentChips(); }
+  showPage('chat');
+  document.getElementById('chatTextarea').focus();
+}
+
+// ── EXPORT ─────────────────────────────────────
+function openExport(){ if(state.convHistory.length===0){showToast('❌ Koi chat nahi hai export karne ke liye');return;} document.getElementById('exportModal').classList.add('show'); }
+function exportChat(fmt) {
+  const lines=[];
+  lines.push('MAC MYTHOS CHAT EXPORT');
+  lines.push('Date: '+new Date().toLocaleString('en-IN'));
+  lines.push('Agent: '+state.activeAgent.label);
+  lines.push('─'.repeat(40));
+  document.getElementById('messagesArea').querySelectorAll('.msg:not(#welcome-msg)').forEach(m=>{
+    const role=m.classList.contains('user')?'You':'Agent';
+    const b=m.querySelector('.msg-bubble');
+    if(b) lines.push('\n['+role+']: '+b.textContent.trim());
+  });
+  const content=fmt==='md'?lines.map(l=>l.startsWith('[')? l :('**'+l+'**')).join('\n'):lines.join('\n');
+  const blob=new Blob([content],{type:'text/plain'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='mac-mythos-chat.'+(fmt==='md'?'md':'txt'); a.click();
+  closeModal('exportModal'); showToast('📥 Chat exported!');
+}
+
+// ── SHARE ──────────────────────────────────────
+function openShare() {
+  const url=window.location.href.split('?')[0];
+  document.getElementById('shareUrl').value=url;
+  document.getElementById('shareModal').classList.add('show');
+}
+function copyShareLink() {
+  const url=document.getElementById('shareUrl').value;
+  navigator.clipboard.writeText(url).then(()=>{ showToast('🔗 Link copied!'); closeModal('shareModal'); }).catch(()=>showToast('❌ Copy failed'));
+}
+
+// ── SEARCH CHATS ───────────────────────────────
+function openSearch() {
+  const q = prompt('Chat search karo:');
+  if (!q) return;
+  const results = Object.values(state.chatHistories).filter(c =>
+    c.title.toLowerCase().includes(q.toLowerCase()) ||
+    (c.msgs||[]).some(m => m.text.toLowerCase().includes(q.toLowerCase()))
+  );
+  if (!results.length) { showToast('❌ Koi chat nahi mili: "'+q+'"'); return; }
+  showToast('🔍 '+results.length+' chat(s) mili!');
+  renderChatHistory(results);
+}
+function renderChatHistory(chats) {
+  const el = document.getElementById('chatHistory'); if (!el) return;
+  const list = chats || Object.values(state.chatHistories).sort((a,b) => {
+    if (a.pinned && !b.pinned) return -1;
+    if (!a.pinned && b.pinned) return 1;
+    return b.ts - a.ts;
+  }).slice(0,30);
+  if (!list.length) { el.innerHTML='<div style="padding:.5rem .9rem;font-size:.72rem;color:var(--muted)">No chats yet</div>'; return; }
+  el.innerHTML = list.map(c => `
+    <div class="history-item" onclick="loadChat('${c.id}')">
+      <span class="hi-icon">${c.pinned?'📌':'💬'}</span>
+      <span class="hi-title" title="${c.title}">${c.archived?'[Archived] ':''}${c.title}</span>
+      <button class="hi-del" onclick="event.stopPropagation();showChatMenu('${c.id}')" title="Options">⋯</button>
+    </div>`).join('');
+}
+
+// ── CHAT CONTEXT MENU ──────────────────────────
+function showChatMenu(id) {
+  const c = state.chatHistories[id]; if (!c) return;
+  const actions = [
+    { label: c.pinned ? '📌 Unpin' : '📌 Pin', fn: () => pinChat(id) },
+    { label: c.archived ? '📦 Unarchive' : '📦 Archive', fn: () => archiveChat(id) },
+    { label: '✏️ Rename', fn: () => renameChat(id) },
+    { label: '📋 Duplicate', fn: () => duplicateChat(id) },
+    { label: '🗑️ Delete', fn: () => deleteChat(id) },
+  ];
+  // Simple prompt-based menu
+  const opts = actions.map((a,i) => (i+1)+'. '+a.label).join('\n');
+  const choice = prompt('Chat options:\n'+opts+'\n\nNumber type karo:');
+  if (!choice) return;
+  const idx = parseInt(choice) - 1;
+  if (actions[idx]) actions[idx].fn();
+}
+
+// ── PIN CHAT ───────────────────────────────────
+function pinChat(id) {
+  const c = state.chatHistories[id]; if (!c) return;
+  c.pinned = !c.pinned;
+  lsSet('mm_chats', state.chatHistories);
+  renderChatHistory();
+  showToast(c.pinned ? '📌 Chat pinned!' : '📌 Chat unpinned');
+}
+
+// ── ARCHIVE CHAT ───────────────────────────────
+function archiveChat(id) {
+  const c = state.chatHistories[id]; if (!c) return;
+  c.archived = !c.archived;
+  lsSet('mm_chats', state.chatHistories);
+  renderChatHistory();
+  showToast(c.archived ? '📦 Chat archived' : '📦 Chat unarchived');
+}
+
+// ── RENAME CHAT ────────────────────────────────
+function renameChat(id) {
+  const c = state.chatHistories[id]; if (!c) return;
+  const name = prompt('Naya naam:', c.title);
+  if (!name) return;
+  c.title = name;
+  lsSet('mm_chats', state.chatHistories);
+  renderChatHistory();
+  showToast('✏️ Renamed!');
+}
+
+// ── DUPLICATE CHAT ─────────────────────────────
+function duplicateChat(id) {
+  const c = state.chatHistories[id]; if (!c) return;
+  const newId = 'chat_'+Date.now();
+  state.chatHistories[newId] = { ...c, id: newId, title: 'Copy: '+c.title, ts: Date.now(), pinned: false };
+  lsSet('mm_chats', state.chatHistories);
+  renderChatHistory();
+  showToast('📋 Chat duplicated!');
+}
+
+// ── FILE UPLOAD UI ─────────────────────────────
+function openFileUpload() {
+  const inp = document.createElement('input');
+  inp.type = 'file';
+  inp.accept = '.txt,.pdf,.docx,.csv,.md,.js,.py,.html,.json';
+  inp.onchange = async (e) => {
+    const file = e.target.files[0]; if (!file) return;
+    if (file.size > 5 * 1024 * 1024) { showToast('❌ File 5MB se badi hai'); return; }
+    showToast('📁 '+file.name+' reading...');
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      const content = ev.target.result;
+      const preview = content.substring(0,500);
+      const ta = document.getElementById('chatTextarea');
+      ta.value = 'Is file ka summary do:\n\nFile: '+file.name+'\n\n'+preview+(content.length>500?'\n...[truncated]':'');
+      autoResize(ta);
+      showPage('chat');
+      showToast('✅ File loaded! Send karo.');
+    };
+    reader.readAsText(file);
+  };
+  inp.click();
+}
+
+function openImageUpload() {
+  const inp = document.createElement('input');
+  inp.type = 'file'; inp.accept = 'image/*';
+  inp.onchange = (e) => {
+    const file = e.target.files[0]; if (!file) return;
+    showToast('🖼️ Image upload backend pe chahiye — coming soon!');
+  };
+  inp.click();
+}
+
+// ── PWA INSTALL ────────────────────────────────
+let deferredInstall = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault(); deferredInstall = e;
+  showToast('📱 App install karo! Settings > About mein install option hai.');
+});
+function installPWA() {
+  if (deferredInstall) { deferredInstall.prompt(); deferredInstall = null; }
+  else showToast('📱 Browser me "Add to Home Screen" use karo');
+}
+
+// ── ANALYTICS (client-side) ────────────────────
+const analytics = {
+  track(event, data={}) {
+    try {
+      const log = lsGet('mm_analytics', []);
+      log.push({ event, data, ts: Date.now() });
+      if (log.length > 200) log.splice(0, 50); // keep last 150
+      lsSet('mm_analytics', log);
+    } catch(e) {}
+  },
+  getSummary() {
+    const log = lsGet('mm_analytics', []);
+    const msgs = log.filter(e => e.event === 'message_sent').length;
+    const sessions = new Set(log.map(e => e.data.session)).size;
+    return { totalMessages: msgs, sessions };
+  }
+};
+
+// ── SESSION ID ─────────────────────────────────
+const SESSION_ID = sessionStorage.getItem('mm_session') || (() => {
+  const id = 'sess_'+Date.now();
+  sessionStorage.setItem('mm_session', id);
+  return id;
+})();
+
+// ── KEYBOARD SHORTCUTS ─────────────────────────
+document.addEventListener('keydown', (e) => {
+  if (e.ctrlKey || e.metaKey) {
+    switch(e.key) {
+      case 'k': e.preventDefault(); newChat(); break;
+      case '/': e.preventDefault(); openSearch(); break;
+      case 'e': e.preventDefault(); openExport(); break;
+      case 'b': e.preventDefault(); toggleSidebar(); break;
+    }
+  }
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.overlay.show').forEach(o => o.classList.remove('show'));
+  }
+});
+
+// ── WEB SEARCH VIA AGENT ───────────────────────
+function handleSearchQuery(text) {
+  const searchPatterns = [/search\s+(.+)/i, /latest\s+(.+)/i, /news\s+about\s+(.+)/i, /kya\s+hai\s+(.+)/i];
+  for (const p of searchPatterns) {
+    const m = text.match(p);
+    if (m) {
+      const query = encodeURIComponent(m[1]);
+      const url = `https://www.google.com/search?q=${query}`;
+      showToast('🔍 Google search khul raha hai...');
+      setTimeout(() => window.open(url, '_blank'), 500);
+      return true;
+    }
+  }
+  return false;
+}
+
+// ── REGENERATE LAST RESPONSE ───────────────────
+function regenerateLast() {
+  if (!state.convHistory.length) { showToast('❌ Koi previous message nahi'); return; }
+  // Remove last assistant message
+  if (state.convHistory[state.convHistory.length-1].role === 'assistant') {
+    state.convHistory.pop();
+    // Remove last agent msg from DOM
+    const msgs = document.getElementById('messagesArea').querySelectorAll('.msg.agent:not(#welcome-msg)');
+    if (msgs.length) msgs[msgs.length-1].remove();
+  }
+  // Resend
+  const lastUser = [...state.convHistory].reverse().find(m => m.role === 'user');
+  if (lastUser) {
+    document.getElementById('chatTextarea').value = lastUser.content;
+    sendMessage();
+  }
+}
+
+// Override sendMessage to add analytics + search detection
+const _origSend = sendMessage;
+window.sendMessage = async function() {
+  const ta = document.getElementById('chatTextarea');
+  const text = (ta.value||'').trim();
+  if (!text) return;
+  // Check for search query
+  if (handleSearchQuery(text)) { ta.value=''; return; }
+  analytics.track('message_sent', { agent: state.activeAgent.id, session: SESSION_ID });
+  await _origSend();
+};
+
+// ── UPDATE SIDEBAR TOOL BUTTONS ────────────────
+// Wire up sidebar buttons that were missing functions
+document.querySelectorAll('.sidebar-btn').forEach(btn => {
+  const txt = btn.textContent.trim();
+  if (txt.includes('Upload File')) btn.onclick = openFileUpload;
+  if (txt.includes('Images')) btn.onclick = openImageUpload;
+  if (txt.includes('Search Chats')) btn.onclick = openSearch;
+});
+
+// ── INIT ───────────────────────────────────────
+function init() {
+  loadSettings();
+  state.chatHistories = lsGet('mm_chats', {});
+  renderChatHistory();
+  updateCounterUI();
+  renderAgentsPage();
+  renderPricingPage();
+
+  // Apply saved accent color
+  if (state.settings.accent) {
+    document.documentElement.style.setProperty('--a', state.settings.accent);
+  }
+
+  // Mobile: sidebar closed by default
+  if (window.innerWidth <= 768) {
+    document.getElementById('sidebar').classList.remove('open');
+  }
+
+  // Track session
+  analytics.track('session_start', { session: SESSION_ID });
+
+  // Keyboard shortcut hint
+  setTimeout(() => showToast('💡 Ctrl+K = New Chat · Ctrl+/ = Search · Ctrl+B = Sidebar'), 2000);
+}
+init();
+</script>
+</body>
+</html>
